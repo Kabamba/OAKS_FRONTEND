@@ -1,0 +1,43 @@
+.single-sermon{
+    position:relative;
+    width:100%;
+}
+
+.single-content{
+    width:100%;
+}
+
+.single-flex{
+    display:flex;
+    justify-content:space-between;
+    width:100%;
+}
+
+.single-video{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin-right:10px;
+}
+
+.single-video .video{
+    max-width:1000px;
+    width:100%;
+    height:500px;
+    background:#000;
+    box-shadow:0px 0px 20px rgba(0, 0, 0, .4);
+}
+
+.single-video .video iframe{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+
+
+@media screen and (max-width: 690px) {
+    .single-video .video{
+        width:100%;
+        height:290px;
+    }
+}

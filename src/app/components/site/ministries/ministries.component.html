@@ -1,0 +1,46 @@
+<app-nav></app-nav>
+<app-social></app-social>
+
+<!-- Banner content -->
+<!-- Banner content -->
+
+<div class="banner" style="background:url(../../../../assets/ressources/img/6.jpg);">
+    <div class="banner-content">
+        <div class="banner-title">
+            <h1>Our minitries</h1>
+            <h3>Impact the world with gospel of the kingdom. </h3>
+        </div>
+    </div>
+</div>
+
+<!-- Banner content -->
+<!-- Banner content -->
+
+<div class="ministries">
+    <div class="minis-content page-contenair pt-pb">
+
+        <div class="default-title center">
+            <h1>Our minitries</h1>
+        </div>
+
+        <div class="minis-flex">
+            <div class="minis-box" *ngFor="let ministry of ministries | paginate : {itemsPerPage:10,currentPage:p}">
+                <div class="minis-image">
+                    <img src="{{imageUrl}}/ministries/{{ministry.image}}" alt="">
+                </div>
+                <div class="minis-text">
+                    <h2>{{ministry.libelle}}</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quibusdam dolor laudantium.</p>
+
+                    <a [routerLink]="['/site/ministry',ministry.id]" class="minis-btn">More details</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pagination" *ngIf="ministries.length > 0">
+            <pagination-controls (pageChange)=" p = $event"></pagination-controls>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

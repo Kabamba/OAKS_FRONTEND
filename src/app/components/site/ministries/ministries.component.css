@@ -1,0 +1,121 @@
+
+/*=============================================
+=            Section ministries            =
+=============================================*/
+
+.ministries{
+    width:100%;
+    position:relative;
+}
+
+.minis-content{
+    width:100%;
+}
+
+.minis-content .minis-flex{
+    display:flex;
+    flex-wrap:wrap;
+    margin-left:-20px;
+}
+
+.minis-content .minis-flex .minis-box .minis-image{
+    width:100%;
+    height:250px;
+}
+
+.minis-content .minis-flex .minis-box .minis-image img{
+    max-width:100%;
+    min-width:100%;
+    max-height:100%;
+    min-height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.minis-content .minis-flex .minis-box{
+    width:calc(calc(100% / 4) - 20px);
+    margin-left:20px;
+    margin-bottom:30px;
+}
+
+@media screen and (min-width:1200px) and (max-width:1366px){
+    .minis-content .minis-flex .minis-box{
+        width:calc(calc(100% / 3) - 20px);
+        margin-left:20px;
+        margin-bottom:30px;
+    }
+}
+
+.minis-content .minis-flex .minis-box .minis-text{
+    background:var(--grey);
+    padding:20px 20px;
+}
+
+.minis-content .minis-flex .minis-box .minis-text h2{
+    margin-bottom:20px;
+}
+
+
+.minis-content .minis-flex .minis-box .minis-text .minis-btn{
+    display:inline-block;
+    padding:12px 15px;
+    background:var(--marron);
+    color:var(--white);
+    margin-top:5px;
+    border-radius:4px;
+}
+/*=====  End of Section ministries  ======*/
+
+
+/*=============================================
+=            Section responsive            =
+=============================================*/
+
+
+/**
+ *
+ * Block mobile
+ *
+ */
+ @media screen and (max-width:525px){
+    .minis-content .minis-flex{
+        width:100%;
+        margin-left:0px;
+    }
+
+    .minis-content .minis-flex .minis-box{
+        width:100%;
+        margin-left:00px;
+    }
+}
+
+
+/**
+ *
+ * Block mini-tablette
+ *
+ */
+
+@media screen and (min-width:530px) and (max-width: 990px){
+    .minis-content .minis-flex .minis-box{
+        width:calc(calc(100% / 2) - 20px);
+    } 
+}
+
+
+
+/**
+ *
+ * Block tablette
+ *
+ */
+
+@media screen and (min-width:992px) and (max-width:1190px){
+    .minis-content .minis-flex .minis-box{
+        width:calc(calc(100% / 3) - 20px);
+    } 
+}
+
+/*=====  End of Section responsive  ======*/
+
+

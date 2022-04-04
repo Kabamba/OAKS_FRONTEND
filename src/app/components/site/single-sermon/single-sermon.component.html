@@ -1,0 +1,59 @@
+<app-nav></app-nav>
+<app-social></app-social>
+
+<!-- Banner content -->
+<!-- Banner content -->
+
+<div class="banner" style="background:url(../../../../assets/ressources/img/oaks-18.jpg);">
+    <div class="banner-content">
+        <div class="banner-title">
+            <h1>Single sermon</h1>
+            <h3>Impact the world with gospel of the kingdom. </h3>
+        </div>
+    </div>
+</div>
+
+<!-- Banner content -->
+<!-- Banner content -->
+
+<!-- Single-sermon -->
+<!-- Single-sermon -->
+
+<div class="single-sermon">
+    <div class="single-content page-contenair pt-pb" *ngIf="sermon">
+        <div class="default-title center">
+            <h1>{{sermon.titre}}</h1>
+        </div>
+
+        <div class="single-video">
+            <div class="video">
+
+                <iframe width="790" height="444" [src]="sermon.url | safe" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="single-similar">
+            <div class="single-title">
+                <h2>More sermons</h2>
+            </div>
+            <div class="similar-flex">
+                <a href="/site/sermon/{{other.id}}" class="similar-box" *ngFor="let other of others">
+                    <div class="similar-image">
+                        <img src="{{imageUrl}}/sermons/{{other.image}}" alt="">
+                    </div>
+
+                    <div class="similar-body">
+                        <h3>{{other.titre}}</h3>
+                        <p>{{other.very_small_desc}}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<app-footer></app-footer>
+<!-- Single-sermon -->
+<!-- Single-sermon -->

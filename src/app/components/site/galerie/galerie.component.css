@@ -1,0 +1,253 @@
+.gallery {
+  width: 100%;
+  position: relative;
+}
+
+.gallery-content {
+  width: 100%;
+  position: relative;
+}
+
+.gallery-flex {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  margin-left: -10px;
+}
+
+.gallery-flex .gallery-card {
+  width: calc(calc(100% / 4) - 10px);
+  height: 280px;
+  position: relative;
+  margin-left: 10px;
+  margin-bottom: 30px;
+}
+
+.gallery-flex .gallery-card img {
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  margin: 0;
+  display: block;
+  object-fit: cover;
+}
+
+.gallery-flex .gallery-card .see {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.651);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  transition: 0.4s ease-in-out 0s;
+}
+
+.gallery-flex .gallery-card:hover .see {
+  height: 100%;
+}
+
+.gallery-flex .gallery-card .see .see-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  line-height: 0px;
+}
+
+.gallery-flex .gallery-card .see .icon-zoom-in-1 {
+  font-size: 20px;
+}
+
+/* Gallery Modal */
+/* Gallery Modal */
+
+.gallery-modal{
+  width: 100%;
+  height:100vh;
+  position:fixed;
+  top:0;
+  left:0;
+  background:rgba(0, 0, 0, .9);
+  z-index:300;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  visibility:hidden;
+  opacity:0;
+  transition:all .4s ease 0s;
+}
+
+.gallery-modal.active{
+  visibility:visible;
+  opacity:1;
+}
+
+.gallery-modal-cancel{
+  display:flex;
+  justify-content:flex-end;
+  width:90%;
+  color:var(--white);
+  margin-bottom:10px;
+}
+
+.gallery-modal-cancel span{
+  font-size:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:35px;
+  height:35px;
+  background:rgba(255, 255, 255, .3);
+  border-radius:50%;
+  cursor:pointer;
+}
+
+.gallery-modal-wrapper{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  height:calc(100% - 100px);
+  position:relative;
+
+}
+
+.gallery-modal.active .gallery-modal-wrapper{
+  opacity:1;
+}
+
+.gallery-modal .gallery-modal-card {
+  max-width:750px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  height:100%;
+  overflow: hidden;
+}
+
+.gallery-modal .gallery-modal-card img{
+  min-width:100%;
+  max-width:100%;
+  min-height:100%;
+  max-height:100%;
+  display:block;
+  object-fit:cover;
+}
+
+.gallery-modal .swiper-wrapper{
+  width:100% !important;
+  height:100%!important;
+}
+
+.gallery-modal-card .swiper-slide{
+  width:100% !important;
+  height:100% !important;
+}
+
+.gallery-modal .gallery-modal-btn{
+  position:absolute;
+  display:flex;
+  justify-content:space-between;
+  width:100%;
+  z-index:100;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+}
+
+.gallery-modal .gallery-modal-btn span{
+  font-size:40px;
+  color:#fff;
+  cursor:pointer;
+}
+
+.gallery-modal .gallery-modal-btn [class*="swiper-button-"]{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+.gallery-modal .gallery-modal-btn .swiper-button-prev{
+  left:-60px;
+}
+
+.gallery-modal .gallery-modal-btn .swiper-button-next{
+  right:-60px;
+}
+
+/* Gallery Modal */
+/* Gallery Modal */
+
+
+
+
+/* Mobile */
+/* Mobile */
+
+@media screen and (max-width: 425px) {
+  .gallery-flex{
+    margin-left:0px;
+  }
+
+  .gallery-flex .gallery-card {
+    width: calc(calc(100% / 1));
+    height: 280px;
+    position: relative;
+    margin-left: 0px;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 568px) and (max-width: 720px) {
+  .gallery-flex .gallery-card {
+    width: calc(calc(100% / 2) - 10px);
+    height: 280px;
+    position: relative;
+    margin-left: 10px;
+    margin-bottom: 30px;
+  }
+}
+/* Mobile */
+/* Mobile */
+
+/* Tablette-Mini */
+/* Tablette-Mini */
+@media screen and (min-width: 730px) and (max-width: 980px) {
+  .gallery-flex .gallery-card {
+    width: calc(calc(100% / 2) - 10px);
+    height: 280px;
+    position: relative;
+    margin-left: 10px;
+    margin-bottom: 30px;
+  }
+}
+/* Tablette-Mini */
+/* Tablette-Mini */
+
+/* Tablette */
+/* Tablette */
+@media screen and (min-width:905px) and (max-width: 1080px) {
+    .gallery-flex .gallery-card {
+        width: calc(calc(100% / 3) - 10px);
+        height: 280px;
+        position: relative;
+        margin-left: 10px;
+        margin-bottom: 30px;
+      }
+}
+/* Tablette */
+/* Tablette */

@@ -1,0 +1,122 @@
+<div class="body-dashboard">
+    <div class="wrapper-dash">
+        <app-side-nav [addActive]="addActive"></app-side-nav>
+        <div class="wrapper-nav-resp">
+            <div class="nav-resp">
+                <div class="nav-resp-left">
+                    <div class="nav-resp-logo">
+                        <img src="../../../assets/ressources/logo/72x72.png" alt="">
+                    </div>
+
+                    <div class="nav-resp-profil">
+                        <div class="nav-profil-circle">
+                            <img src="../../../assets/ressources/icons/male_user.svg" alt="">
+                        </div>
+                        <div class="dot-line"></div>
+                    </div>
+                </div>
+
+                <div class="nav-resp-toggle" (click)="toggle()">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+        <!-- Dash Modal -->
+        <!-- Dash Modal -->
+        <div class="dash-modal" (click)="closeModal()" [class.active]="AppearModal">
+            <div class="dash-modal-wrapper" (click)="stopPropagation($event)">
+                <div class="dsh-m-head flex space-between align-items">
+                    <h2>Add Administrator</h2>
+
+                    <div class="cancel" (click)="closeModal()">
+                        <i class='bx bx-x'></i>
+                    </div>
+                </div>
+
+                <div class="dsh-m-form">
+                    <form [formGroup]="brandForm" method="post">
+                        <div class="group-form-flex space-between">
+                            <div class="group-form">
+                                <label for="name">Name</label>
+                                <input type="text" name="" id="name" formControlName="name" placeholder="Name" [class.input-error]="errors.name" class="input-control">
+                                <div class="text-error" *ngIf="errors.name">{{errors.name}}</div>
+                            </div>
+
+                            <div class="group-form">
+                                <label for="email">Email</label>
+                                <input type="email" name="" id="email" formControlName="email" placeholder="email" [class.input-error]="errors.email" class="input-control">
+                                <div class="text-error" *ngIf="errors.email">{{errors.email}}</div>
+                            </div>
+                        </div>
+
+                        <div class="group-form-flex space-between">
+                            <div class="group-form">
+                                <label for="passe">Password</label>
+                                <input type="password" name="password" formControlName="password" id="password" [class.input-error]="errors.password" placeholder="Password" class="input-control">
+                                <div class="text-error" *ngIf="errors.password">{{errors.password}}</div>
+                            </div>
+                        </div>
+
+                        <div class="form-btn">
+                            <button class="btn bg-success" (click)="sauvegarder()" [disabled]="isAdding">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Dash Modal -->
+        <!-- Dash Modal -->
+
+        <div class="dash">
+            <div class="dash-title padding-10">
+                <h1>Manage administrators</h1>
+            </div>
+
+            <div class="dash-tableau padding-10">
+                <div class="dash-title-search">
+                    <div class="dsh-right">
+                        <div class="group-form">
+                            <input type="text" placeholder="Search.." class="input-control" [(ngModel)]="nom" (ngModelChange)="search()">
+                            <div class="tab-search">
+                                <i class='bx bx-search'></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn-add" (click)="showModal()">Add administrator <i class='bx bx-plus-circle'></i></button>
+                </div>
+                <div class="table">
+                    <table class="wd-800">
+                        <thead>
+                            <th (click)="sort('id')">#ID</th>
+                            <th (click)="sort('name')">Name <i class='bx bxs-sort-alt'></i></th>
+                            <th (click)="sort('email')">Email <i class='bx bxs-sort-alt'></i></th>
+                            <th>Action</th>
+                        </thead>
+
+                        <tbody>
+                            <tr *ngFor="let i = index let admin of admins | orderBy: key : reverse | paginate : {itemsPerPage:6,currentPage:p}">
+                                <td>{{i+1}}</td>
+                                <td>{{admin.name}}</td>
+                                <td>{{admin.email}}</td>
+                                <td>
+                                    <div class="actions-flex">
+                                        <button class="action danger" type="button" title="delete" (click)="delete(admin.id)">
+                                            <i class='bx bx-trash'></i>
+                                        </button>
+                                        <button class="action blue" type="button" title="edit" (click)="show(admin.id)">
+                                            <i class='bx bx-edit'></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="pagination">
+                <pagination-controls (pageChange)=" p = $event"></pagination-controls>
+            </div>
+        </div>
+    </div>
+</div>

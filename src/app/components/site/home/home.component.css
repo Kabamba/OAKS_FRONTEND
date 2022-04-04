@@ -1,0 +1,18 @@
+
+.banner-slider .swiper-wrapper .swiper-slide .banner-title h1,
+.banner-slider .swiper-wrapper .swiper-slide .banner-title h3{
+    opacity:0;
+    transform:translateY(-30px);
+    transition:all 2s ease-in-out .3s;
+}
+
+.banner-slider .swiper-wrapper .swiper-slide .banner-title h3{
+    transition-delay:.5s !important;
+}
+.banner-slider .swiper-wrapper .swiper-slide.swiper-slide-duplicate-active .banner-title h3,
+.banner-slider .swiper-wrapper .swiper-slide.swiper-slide-active .banner-title h3,
+.banner-slider .swiper-wrapper .swiper-slide.swiper-slide-duplicate-active .banner-title h1,
+.banner-slider .swiper-wrapper .swiper-slide.swiper-slide-active .banner-title h1{
+    opacity:1;
+    transform:translateY(0px);
+}

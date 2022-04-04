@@ -1,0 +1,272 @@
+/*=============================================
+=            Footer Content            =
+=============================================*/
+
+.footer {
+  width: 100%;
+  margin-top: 100px;
+  background: url("../../../../assets/ressources/img/banner/banner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
+  color: var(--white);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+}
+
+.footer-content {
+  width: 100%;
+}
+
+.footer-content .footer-title {
+  margin-top: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+.footer-content .footer-title h4 {
+  font-family: "Gothic-Regular";
+  color: var(--green);
+}
+
+.footer-content .footer-title h1 {
+  margin-top: 30px;
+  font-size: 55px;
+}
+
+.footer-content .footer-flex {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-flex .ft-header {
+  margin-bottom: 40px;
+}
+
+.footer-flex .ft-header h3 {
+  font-family: "Gothic-Regular";
+  font-weight: 400;
+  font-size: 30px;
+}
+
+.footer-flex .ft-body p {
+  margin-bottom: 20px;
+  line-height: 20px;
+}
+
+.footer-flex .ft-body a.donate {
+  display: inline-block;
+  padding: 8px 15px;
+  background: var(--marron);
+  color: var(--white);
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.footer-flex .ft-body .ft-list-box {
+  display: flex;
+}
+
+.footer-flex .ft-body .ft-list-box .ft-list:last-child {
+  margin-left: 20px;
+}
+
+.footer-flex .ft-body .ft-list a {
+  color: var(--white);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.footer-flex .ft-body .ft-list-box .ft-list a:hover {
+  color: var(--green);
+}
+
+.footer-flex .ft-body .ft-sociaux {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.footer-flex .ft-body .ft-sociaux a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  line-height: 0px;
+  background: var(--white);
+  color: var(--color-text);
+}
+
+.footer-flex .ft-body .ft-sociaux a:last-child {
+  margin-right: 0;
+}
+
+.footer-flex .ft-body .ft-sociaux a [class*="icon-"] {
+  font-size: 18px;
+}
+
+.footer-flex .ft-body .group-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-flex .ft-body .group-form input {
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-family: "Gothic-Medium";
+  font-size: 16px;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.footer-flex .ft-body .group-form input:focus {
+  box-shadow: 0px 0px 0px 4px var(--marron);
+}
+
+.footer-flex .ft-body .group-form button {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  background: var(--marron);
+  font-family: "Gothic-Medium";
+  color: var(--white);
+  cursor: pointer;
+}
+
+.footer-copy {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 70px;
+}
+
+.footer-copy p {
+  font-size: 17px;
+  font-family: "Gothic-Medium";
+  color: #dddbe2;
+  text-transform: capitalize;
+}
+
+.footer-copy p a {
+  color: #dddbe2;
+}
+
+.footer-copy p a:hover {
+  color: var(--marron);
+}
+/*=====  End of Footer Content  ======*/
+
+/* Mobile */
+/* Mobile */
+
+@media screen and (max-width: 690px) {
+  .page-contenair {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .footer {
+    width: 100%;
+    height: auto;
+  }
+
+  .footer::after {
+    height: 100%;
+  }
+
+  .footer-content {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .footer-content .footer-title h1 {
+    font-size: 40px;
+  }
+
+  .footer-content .footer-flex {
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+  }
+
+  .footer-flex .footer-box {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .footer-copy {
+    text-align: center;
+  }
+}
+
+/* Mobile */
+/* Mobile */
+
+/* Mini Tablette */
+/* Mini Tablette */
+
+@media screen and (min-width: 700px) and (max-width: 900px) {
+  .page-contenair {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .footer {
+    height: auto;
+  }
+
+  .footer::after {
+    height: 100%;
+  }
+
+  .footer-content {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .footer-content .footer-flex {
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    justify-content: normal;
+  }
+
+  .footer-flex .footer-box {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}
+
+/* Mini Tablette */
+/* Mini Tablette */
+
+/* Tablette */
+/* Tablette */
+
+@media screen and (min-width: 902px) and (max-width: 1090px) {
+  .page-contenair {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+/* Tablette */
+/* Tablette */

@@ -1,0 +1,53 @@
+<div class="body-dashboard">
+    <div class="wrapper-dash">
+        <app-side-nav [addActive]="addActive"></app-side-nav>
+        <div class="wrapper-nav-resp">
+            <div class="nav-resp">
+                <div class="nav-resp-left">
+                    <div class="nav-resp-logo">
+                        <img src="../../../assets/ressources/logo/72x72.png" alt="">
+                    </div>
+
+                    <div class="nav-resp-profil">
+                        <div class="nav-profil-circle">
+                            <img src="../../../assets/ressources/icons/male_user.svg" alt="">
+                        </div>
+                        <div class="dot-line"></div>
+                    </div>
+                </div>
+
+                <div class="nav-resp-toggle" (click)="toggle()">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+        <div class="dash">
+            <div class="dash-title padding-10">
+                <h1>Testimonial detail</h1>
+            </div>
+
+            <div class="dash-detail">
+                <div class="dsh-detail-title">
+                    <h1>{{testimonial.titre}}</h1>
+                </div>
+
+                <div class="dsh-detail-video">
+                    <img src="{{imageUrl}}/testimonials/{{image.chemin}}" alt="" *ngFor="let image of testimonial.images">
+                </div>
+
+                <div class="dsh-detail-text">
+                    <div class="text">
+                        <div class="txt-head">
+                            <h3>Witness name : <strong>{{testimonial.witness_name}}</strong></h3>
+                            <h3>Date : <strong> {{testimonial.date_testi}}</strong></h3>
+                        </div>
+
+                        <div class="txt-body">
+                            <p>{{testimonial.full_desc}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,89 @@
+<footer class="footer">
+    <div class="footer-content page-contenair">
+        <div class="footer-title">
+            <h4>TELL US YOUR NEED</h4>
+            <h1>We're ready to serve.</h1>
+        </div>
+
+        <div class="footer-flex">
+            <div class="footer-box">
+                <div class="ft-header">
+                    <h3>Conctact</h3>
+                </div>
+                <div class="ft-body">
+                    <p>
+                        1136 Matheson Blvd. East <br>
+                        EastMississauga ON, L4W <br>
+                        2V4, Canada
+                    </p>
+                    <p>
+                        (+1) 905-890-7977 <br>
+                        (+1) 647-5467977
+                    </p>
+
+                    <a href="#" class="donate">Donate</a>
+                </div>
+            </div>
+
+            <div class="footer-box">
+                <div class="ft-header">
+                    <h3>Ministries</h3>
+                </div>
+                <div class="ft-body">
+                    <div class="ft-list-box">
+                        <div class="ft-list">
+                            <ul>
+                                <li *ngFor="let ministry of ministries"><a href="#">{{ministry.libelle}}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-box">
+                <div class="ft-header">
+                    <h3>Links</h3>
+                </div>
+                <div class="ft-body">
+                    <div class="ft-list">
+                        <ul>
+                            <li><a href="#">our vision</a></li>
+                            <li><a href="#">about us</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="ft-sociaux">
+                        <a href="#"><span class="icon-youtube-play"></span></a>
+                        <a href="#"><span class="icon-instagram"></span></a>
+                        <a href="#"><span class="icon-facebook"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-box">
+                <div class="ft-header">
+                    <h3>Newsletter</h3>
+                </div>
+                <div class="ft-body">
+                    <form method="post">
+                        <p>
+                            Subscribe your e-mail
+                            <br> address and get to know more
+                            <br> informations.
+                        </p>
+                        <div class="group-form">
+                            <input type="email" name="" id="" placeholder="Your email adress">
+                            <button type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copy">
+            <p>&copy; <a href="#">2022 bigger dream innovation <span class="icon-code"></span> </a> design. all right
+                reserved</p>
+        </div>
+    </div>
+</footer>

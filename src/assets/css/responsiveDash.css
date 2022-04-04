@@ -1,0 +1,328 @@
+@media screen and (max-width: 997px) {
+  /*=============================================
+=            Section Parents            =
+=============================================*/
+
+  .wrapper-dash {
+    padding: 5px 5px 30px;
+    margin-left: 0px;
+    width: 100%;
+  }
+
+  .wrapper-dash .dash {
+    width: 100%;
+    min-height: 100vh;
+    border-radius: 10px;
+    margin-top: 120px;
+    padding: 10px;
+  }
+
+  .padding-10 {
+    padding: 10px;
+  }
+
+  /*=====  End of Section Parents  ======*/
+
+  /*=============================================
+=            Section table            =
+=============================================*/
+
+  /**
+ *
+ * Dash-title-Search
+ *
+ */
+
+  .dash-title-search {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .dash-title-search .group-form {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  /*=====  End of dash-title-search  ======*/
+
+  /**
+ *
+ * Block Filter
+ *
+ */
+
+  .filter {
+    margin-bottom: 0px;
+  }
+
+  .filter-inputs .form-filter .group-form {
+    width: 100%;
+  }
+
+  .filter-inputs .form-filter .group-form .input-flex {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .filter-inputs .form-filter .group-form .input-flex div {
+    width: 100%;
+  }
+
+  .filter-inputs .form-filter .group-form .input-flex div:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  .filter-inputs .form-filter .group-form .input-flex div .label {
+    margin: 0;
+    margin-right: 10px;
+  }
+
+  /*=====  End of filter  ======*/
+
+  .dash-tableau {
+    width: 100%;
+  }
+
+  .dash-tableau .table {
+    width: 100%;
+    overflow-x: scroll;
+  }
+
+  .dash-tableau .table table {
+    width: 100%;
+  }
+
+  /**
+   *
+   * Size table
+   *
+   */
+
+  .wd-300 {
+    width: 300px !important;
+  }
+
+  .wd-400 {
+    width: 400px !important;
+  }
+
+  .wd-500 {
+    width: 500px !important;
+  }
+
+  .wd-600 {
+    width: 600px !important;
+  }
+
+  .wd-700 {
+    width: 700px !important;
+  }
+
+  .wd-800 {
+    width: 800px !important;
+  }
+
+  .wd-900 {
+    width: 900px !important;
+  }
+
+  .wd-1000 {
+    width: 1000px !important;
+  }
+
+  .wd-1200 {
+    width: 1200px !important;
+  }
+
+  .wd-1300 {
+    width: 1300px !important;
+  }
+  .wd-1400 {
+    width: 1400px !important;
+  }
+
+  /*=====  End of Size table  ======*/
+}
+
+/**
+ *
+ * Mini-Tablette
+ *
+ */
+
+/**
+  *
+  * Mobile
+  *
+  */
+
+@media screen and (max-width: 690px) {
+  .dash-modal {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .dash-modal-wrapper {
+    width: 100%;
+  }
+
+  .dash-modal-wrapper .dsh-m-form {
+    max-height: 100%;
+    overflow-y: scroll;
+  }
+
+  .dash-modal-wrapper .dsh-m-form .group-form-flex .group-form {
+    width: 100%;
+  }
+
+  .file-preview .fl-pr-img{
+    margin-right:13px;
+    margin-bottom:10px;
+  }
+}
+
+/*=====  End of Mobile  ======*/
+
+/**
+ *
+ * Mini-tablette
+ *
+ */
+
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+  .dash-modal {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .dash-modal-wrapper {
+    width: 100%;
+  }
+
+  /**
+ *
+ * Dash-title-Search
+ *
+ */
+
+  .dash-title-search .group-form {
+    width: 100%;
+    margin: 0px;
+  }
+
+  /*=====  End of dash-title-search  ======*/
+
+  /**
+ *
+ * Block Filter
+ *
+ */
+
+  .filter {
+    margin-bottom: 0px;
+  }
+
+  .filter-inputs .form-filter .group-form {
+    width: 33%;
+  }
+
+  .filter-inputs .form-filter .group-form .input-flex div {
+    width: 50%;
+  }
+
+  .filter-inputs .form-filter .group-form .input-flex div .label {
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+
+  /**
+   *
+   * Size table
+   *
+   */
+
+  .wd-800 {
+    width: 800px !important;
+  }
+
+  .wd-900 {
+    width: 900px !important;
+  }
+
+  .wd-1000 {
+    width: 1000px !important;
+  }
+
+  .wd-1200 {
+    width: 1200px !important;
+  }
+
+  .wd-1300 {
+    width: 1300px !important;
+  }
+
+  .wd-1400 {
+    width: 1400px !important;
+  }
+  /*=====  End of Size table  ======*/
+}
+
+/*=====  End of Mini-Tablette  ======*/
+
+/**
+ *
+ * Tablette
+ *
+ */
+
+@media screen and (min-width: 1024px) and (max-width: 1198px) {
+  .wrapper-dash {
+    margin-left: 300px;
+  }
+
+  /*=============================================
+=            Section table            =
+=============================================*/
+
+  .dash-tableau {
+    width: 100%;
+  }
+
+  .dash-tableau .table {
+    width: 100%;
+    overflow-x: scroll;
+  }
+
+  .dash-tableau .table table {
+    width: 100%;
+  }
+
+  /*=====  End of Section table  ======*/
+
+  /**
+   *
+   * Size table
+   *
+   */
+
+  .wd-900 {
+    width: 900px !important;
+  }
+
+  .wd-1000 {
+    width: 1000px !important;
+  }
+
+  .wd-1200 {
+    width: 1200px !important;
+  }
+
+  .wd-1300 {
+    width: 1300px !important;
+  }
+  .wd-1400 {
+    width: 1400px !important;
+  }
+  /*=====  End of Size table  ======*/
+}

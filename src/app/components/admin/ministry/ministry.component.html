@@ -1,0 +1,189 @@
+<div class="body-dashboard">
+    <div class="wrapper-dash">
+        <app-side-nav [addActive]="addActive"></app-side-nav>
+        <div class="wrapper-nav-resp">
+            <div class="nav-resp">
+                <div class="nav-resp-left">
+                    <div class="nav-resp-logo">
+                        <img src="../../../assets/ressources/logo/72x72.png" alt="">
+                    </div>
+
+                    <div class="nav-resp-profil">
+                        <div class="nav-profil-circle">
+                            <img src="../../../assets/ressources/icons/male_user.svg" alt="">
+                        </div>
+                        <div class="dot-line"></div>
+                    </div>
+                </div>
+
+                <div class="nav-resp-toggle" (click)="toggle()">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+        <!-- Dash Modal -->
+        <!-- Dash Modal -->
+        <div class="dash-modal" (click)="closeModal()" [class.active]="AppearModal">
+            <div class="dash-modal-wrapper" (click)="stopPropagation($event)">
+                <div class="dsh-m-head flex space-between align-items">
+                    <h2>Add ministry</h2>
+
+                    <div class="cancel" (click)="closeModal()">
+                        <i class='bx bx-x'></i>
+                    </div>
+                </div>
+
+                <div class="dsh-m-form">
+                    <form [formGroup]="brandForm">
+
+                        <div class="group-form-flex space-between">
+                            <input type="text" id="id" formControlName="id" hidden>
+                            <div class="group-form">
+                                <label for="ministry_name">Ministry name</label>
+                                <input type="text" id="ministry_name" formControlName="ministry_name" id="ministry_name"
+                                    placeholder="Ministry name" class="input-control"
+                                    [class.input-error]="errors.ministry_name">
+                                <div class="text-error" *ngIf="errors.ministry_name">{{errors.ministry_name}}</div>
+                            </div>
+
+                            <div class="group-form">
+                                <label for="leader_name">Leader name</label>
+                                <input type="text" name="" formControlName="leader_name" id="leader_name"
+                                    placeholder="Leader name" class="input-control"
+                                    [class.input-error]="errors.leader_name">
+                                <div class="text-error" *ngIf="errors.leader_name">{{errors.leader_name}}</div>
+                            </div>
+                        </div>
+
+                        <div class="group-form">
+                            <label for="descriptions">Description</label>
+                            <textarea id="descriptions" formControlName="descriptions" cols="30" rows="5"
+                                class="input-control" [class.input-error]="errors.descriptions"></textarea>
+                            <div class="text-error" *ngIf="errors.descriptions">{{errors.descriptions}}</div>
+                        </div>
+
+                        <div class="group-form">
+                            <label for="">Add picture</label>
+                            <label class="file-box" [class.input-error]="errors.image">
+                                <input type="file" name="" id="" hidden (change)="loadCover($event)">
+                                <div class="file-icon">
+                                    <i class='bx bx-image-add'></i>
+                                </div>
+                            </label>
+                            <div class="text-error" *ngIf="errors.image">{{errors.image}}</div>
+
+                            <div class="file-preview" *ngIf="chemin">
+                                <div class="fl-pr-img">
+                                    <img src="{{chemin}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-btn">
+                            <button class="btn bg-success" (click)="sauvegarder()" [disabled]="isAdding">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Dash Modal -->
+        <!-- Dash Modal -->
+
+        <div class="dash">
+            <div class="dash-title padding-10">
+                <h1>Manage ministries</h1>
+            </div>
+
+            <div class="dash-event">
+                <!-- <div class="filter padding-10">
+                    <div class="filter-head">
+                        <h2>Filter</h2>
+                        <div class="fl-icon" (click)="Filter()">
+                            <i class='bx bx-filter-alt'></i>
+                        </div>
+                    </div>
+
+                    <div class="filter-inputs">
+                        <form action="" method="post" class="form-filter">
+                            <div class="form-filter-content">
+                                <div class="group-form">
+                                    <label for="date">date</label>
+                                    <div class="input-flex">
+                                        <div>
+                                            <span class="label">Au</span>
+                                            <input type="date" name="" id="" class="input-control">
+                                        </div>
+                                        <div>
+                                            <span class="label">Du</span>
+                                            <input type="date" name="" id="" class="input-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="group-form">
+                                    <label for="titre">title</label>
+                                    <input type="text" name="" id="" placeholder="Search by title"
+                                        class="input-control">
+                                </div>
+
+                                <div class="group-form">
+                                    <label for="titre">description</label>
+                                    <input type="text" name="" id="" placeholder="Search by description"
+                                        class="input-control">
+                                </div>
+                            </div>
+
+                            <div class="form-filter-btn">
+                                <button>Filter</button>
+                            </div>
+                        </form>
+                    </div>
+                </div> -->
+
+                <div class="dash-title-search padding-10">
+                    <div class="dsh-right">
+                        <div class="group-form">
+                            <input type="text" placeholder="Search.." class="input-control" [(ngModel)]="word"
+                                (ngModelChange)="search()">
+                            <div class="tab-search">
+                                <i class='bx bx-search'></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn-add" (click)="showModal()">Add ministry <i
+                            class='bx bx-plus-circle'></i></button>
+                </div>
+
+                <div class="dsh-event-content">
+                    <div class="dsh-event-box"
+                        *ngFor="let ministry of ministries | paginate : {itemsPerPage:10,currentPage:p}">
+                        <div class="dsh-event-img">
+                            <img src="{{imageUrl}}/ministries/{{ministry.image}}" alt="">
+                        </div>
+                        <div class="dsh-event-text">
+                            <h3>{{ministry.libelle}}</h3>
+                            <span>Leader name : <strong>{{ministry.leader_name}}</strong></span>
+                            <p>{{ministry.small_desc}}</p>
+
+                            <div class="dsh-event-actions">
+                                <div class="danger action" (click)="delete(ministry.id)">
+                                    <i class='bx bx-trash'></i>
+                                </div>
+                                <div class="blue A action" (click)="show(ministry.id)">
+                                    <i class='bx bx-edit'></i>
+                                </div>
+                                <a [routerLink]="['/admin/ministry/',ministry.id]" class="green A action">
+                                    <i class='bx bx-detail'></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pagination">
+                    <pagination-controls (pageChange)=" p = $event"></pagination-controls>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

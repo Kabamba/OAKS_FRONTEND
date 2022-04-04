@@ -1,0 +1,208 @@
+<div class="body-dashboard">
+    <div class="wrapper-dash">
+        <app-side-nav [addActive]="addActive"></app-side-nav>
+        <div class="wrapper-nav-resp">
+            <div class="nav-resp">
+                <div class="nav-resp-left">
+                    <div class="nav-resp-logo">
+                        <img src="../../../assets/ressources/logo/72x72.png" alt="">
+                    </div>
+
+                    <div class="nav-resp-profil">
+                        <div class="nav-profil-circle">
+                            <img src="../../../assets/ressources/icons/male_user.svg" alt="">
+                        </div>
+                        <div class="dot-line"></div>
+                    </div>
+                </div>
+
+                <div class="nav-resp-toggle" (click)="toggle()">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+        <!-- Dash Modal -->
+        <!-- Dash Modal -->
+        <div class="dash-modal" (click)="closeModal()" [class.active]="AppearModal">
+            <div class="dash-modal-wrapper" (click)="stopPropagation($event)">
+                <div class="dsh-m-head flex space-between align-items">
+                    <h2>Add testimonial</h2>
+
+                    <div class="cancel" (click)="closeModal()">
+                        <i class='bx bx-x'></i>
+                    </div>
+                </div>
+
+                <div class="dsh-m-form">
+                    <form [formGroup]="brandForm">
+                        <input type="text" formControlName="id" hidden>
+                        <div class="group-form-flex space-between">
+                            <div class="group-form">
+                                <label for="title">Title</label>
+                                <input type="text" formControlName="title" id="title" placeholder="Title"
+                                    class="input-control" [class.input-error]="errors.title">
+                                <div class="text-error" *ngIf="errors.title">{{errors.title}}</div>
+                            </div>
+
+                            <div class="group-form">
+                                <label for="witness_name">Witness name</label>
+                                <input type="text" formControlName="witness_name" id="witness_name"
+                                    class="input-control" [class.input-error]="errors.witness_name">
+                                <div class="text-error" *ngIf="errors.witness_name">{{errors.witness_name}}</div>
+                            </div>
+                        </div>
+
+                        <div class="group-form">
+                            <label for="date">Date testimonial</label>
+                            <input type="date" formControlName="date" id="date"
+                                class="input-control" [class.input-error]="errors.date">
+                            <div class="text-error" *ngIf="errors.date">{{errors.date}}</div>
+                        </div>
+                      
+
+                        <div class="group-form">
+                            <label for="desc">Description</label>
+                            <textarea id="desc" formControlName="descriptions" cols="30" rows="5" class="input-control" [class.input-error]="errors.descriptions"></textarea>
+                            <div class="text-error" *ngIf="errors.descriptions">{{errors.descriptions}}</div>
+                        </div>
+
+                        <div class="group-form" *ngIf="showFileInputs">
+                            <label for="">Cover picture</label>
+                            <label class="file-box" [class.input-error]="errors.cover">
+                                <input type="file" (change)="loadCover($event)" id="cover" hidden>
+                                <div class="file-icon">
+                                    <i class='bx bx-image-add'></i>
+                                </div>
+                            </label>
+                            <div class="text-error" *ngIf="errors.cover">{{errors.cover}}</div>
+
+                            <div class="file-preview" *ngIf="chemin">
+                                <div class="fl-pr-img">
+                                    <img src="{{chemin}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="group-form" *ngIf="showFileInputs">
+                            <label for="">Add a picture</label>
+                            <label class="file-box" [class.input-error]="errors.images">
+                                <input type="file" multiple (change)="onSelectedFile($event)" id="file" hidden>
+                                <div class="file-icon">
+                                    <i class='bx bx-image-add'></i>
+                                </div>
+                            </label>
+
+                            <div class="file-preview">
+                                <div class="fl-pr-img" *ngFor="let url of urls">
+                                    <img src="{{url}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-btn">
+                            <button class="btn bg-success" (click)="sauvegarder()" [disabled]="isAdding">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Dash Modal -->
+        <!-- Dash Modal -->
+
+        <div class="dash">
+            <div class="dash-title padding-10">
+                <h1>Manage testimonials</h1>
+            </div>
+
+            <div class="dash-event">
+                <!-- <div class="filter padding-10">
+                    <div class="filter-head">
+                        <h2>Filter</h2>
+                        <div class="fl-icon" (click)="Filter()">
+                            <i class='bx bx-filter-alt'></i>
+                        </div>
+                    </div>
+
+                    <div class="filter-inputs">
+                        <form action="" method="post" class="form-filter">
+                            <div class="form-filter-content">
+                                <div class="group-form">
+                                    <label for="date">date</label>
+                                    <div class="input-flex">
+                                        <div>
+                                            <span class="label">Au</span>
+                                            <input type="date" name="" id="" class="input-control">
+                                        </div>
+                                        <div>
+                                            <span class="label">Du</span>
+                                            <input type="date" name="" id="" class="input-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="group-form">
+                                    <label for="titre">title</label>
+                                    <input type="text" name="" id="" placeholder="Search by title"
+                                        class="input-control">
+                                </div>
+
+                                <div class="group-form">
+                                    <label for="titre">description</label>
+                                    <input type="text" name="" id="" placeholder="Search by description"
+                                        class="input-control">
+                                </div>
+                            </div>
+
+                            <div class="form-filter-btn">
+                                <button>Filter</button>
+                            </div>
+                        </form>
+                    </div>
+                </div> -->
+
+                <div class="dash-title-search padding-10">
+                    <div class="dsh-right">
+                        <div class="group-form">
+                            <input type="text" placeholder="Search.." class="input-control" [(ngModel)]="word" (ngModelChange)="search()">
+                            <div class="tab-search">
+                                <i class='bx bx-search'></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn-add" (click)="showModal(1)">Add testimonial <i
+                            class='bx bx-plus-circle'></i></button>
+                </div>
+
+                <div class="dsh-event-content">
+                    <div class="dsh-event-box" *ngFor="let testimonial of testimonials | paginate : {itemsPerPage:10,currentPage:p}">
+                        <div class="dsh-event-img">
+                            <img src="{{imageUrl}}/testimonials/{{testimonial.cover}}" alt="">
+                        </div>
+                        <div class="dsh-event-text">
+                            <h3>{{testimonial.titre}}</h3>
+                            <span>Witness name : <strong>{{testimonial.witness_name}}</strong></span>
+                            <span>Date : <strong>{{testimonial.date_testi}}</strong></span>
+                            <p>{{testimonial.small_desc}}</p>
+
+                            <div class="dsh-event-actions">
+                                <div class="danger action" (click)="delete(testimonial.id)">
+                                    <i class='bx bx-trash'></i>
+                                </div>
+                                <div class="blue A action" (click)="show(testimonial.id)">
+                                    <i class='bx bx-edit'></i>
+                                </div>
+                                <a [routerLink]="['/admin/testimonial/',testimonial.id]" class="green A action">
+                                    <i class='bx bx-detail'></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pagination">
+                    <pagination-controls (pageChange)=" p = $event"></pagination-controls>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

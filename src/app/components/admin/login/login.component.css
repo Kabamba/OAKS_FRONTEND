@@ -1,0 +1,64 @@
+.wrapper-login {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 500px;
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.075);
+}
+
+.card .card-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card .card-title img {
+  width: 130px;
+  height: 130px;
+  display: block;
+}
+
+.card .card-box {
+  padding: 20px 20px 40px;
+}
+
+/* Card-error */
+
+.card-error {
+  border-radius: 10px;
+}
+
+/* Card-error */
+
+.form-btn {
+  width: 100%;
+}
+
+.form-btn button {
+  outline: none;
+  border: none;
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 450px) {
+  .wrapper-login {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .card {
+    width: 100%;
+  }
+}

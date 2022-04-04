@@ -1,0 +1,88 @@
+
+/*=============================================
+=            Fixed Sociaux            =
+=============================================*/
+
+.fixed-sociaux {
+    position: fixed;
+    top: 50%;
+    right: 50px;
+    transform: translate(0, -50%);
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .fixed-sociaux a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--white);
+    margin-bottom: 20px;
+    line-height: 0px;
+    color: var(--color-text);
+  }
+  
+  .fixed-sociaux a [class*="icon-"] {
+    font-size: 25px;
+  }
+  
+  .fixed-sociaux.active a{
+    opacity:0;
+    pointer-events:none;
+    transform:translateY(20px);
+  }
+  
+  .fixed-sociaux.active a:nth-child(1){
+    transition-delay:.3s;
+  }
+  
+  .fixed-sociaux.active a:nth-child(2){
+    transition-delay:.2s;
+  }
+  
+  .fixed-sociaux.active a:nth-child(3){
+    transition-delay:.1s;
+  }
+  
+  .button-top{
+    position:fixed;
+    right:-100%;
+    bottom:30px;
+    z-index:900;
+    width:50px;
+    height:50px;
+    background:var(--white);
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    box-shadow:0px 8px 30px rgba(0, 0, 0, 0.4);
+    border-radius:6px;
+    transition: right 1s ease 0s;
+  }
+  
+  .button-top.active{
+    right:20px;
+  }
+  
+  .button-top svg{
+    transform:rotate(90deg);
+    display:block;
+  }
+  /*=====  End of Fixed Sociaux  ======*/
+  
+  /*=============================================
+  =            Section Responsive Nav an Footer            =
+  =============================================*/
+  
+  
+  @media screen and (max-width: 1050px) {
+    .fixed-sociaux {
+      right: 20px;
+    }
+  }
+  
+  

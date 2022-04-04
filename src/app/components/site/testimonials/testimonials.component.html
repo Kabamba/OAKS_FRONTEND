@@ -1,0 +1,87 @@
+<app-nav></app-nav>
+<app-social></app-social>
+
+<!-- Banner content -->
+<!-- Banner content -->
+
+<div class="banner" style="background:url(../../../../assets/ressources/img/oaks-18.jpg);">
+    <div class="banner-content">
+        <div class="banner-title">
+            <h1>Our testimonials</h1>
+            <h3>Impact the world with gospel of the kingdom. </h3>
+        </div>
+    </div>
+</div>
+
+<!-- Banner content -->
+<!-- Banner content -->
+
+<!-- Sermons content -->
+<!-- Sermons content -->
+
+<div class="testimonials">
+    <div class="testi-content page-contenair pt-pb">
+        <div class="default-title center">
+            <h1>Our testimonials</h1>
+        </div>
+
+        <div class="media-flex" >
+         
+            <div class="media-search">
+                <div class="media-header">
+                    <div class="speak-title">
+                        <h3>Witness name and title</h3>
+                    </div>
+
+                    <div class="group-form">
+                        <input type="text" placeholder="Search by witness name and title" [(ngModel)]="title" (ngModelChange)="search()">
+                        <span class="icon-search"></span>
+                    </div>
+                </div>
+
+                <div class="media-bottom">
+                    <div class="speak-title">
+                        <h3>Search by date</h3>
+                    </div>
+
+                    <div class="group-form">
+                        <input type="date" name="" id="" placeholder="Search event" [(ngModel)]="date" (ngModelChange)="searchDate()">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="media-box" *ngIf="testimonials.length > 0">
+                <div class="carousel-testi-card"
+                    *ngFor="let testimonial of testimonials | paginate : {itemsPerPage:10,currentPage:p}">
+                    <div class="testi-image">
+                        <img src="{{imageUrl}}/testimonials/{{testimonial.cover}}" alt="">
+                    </div>
+
+                    <div class="testi-body">
+                        <div class="quote">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30.09" height="22.455"
+                                viewBox="0 0 30.09 22.455">
+                                <path id="bxs-quote-alt-left"
+                                    d="M9.75,15a6.64,6.64,0,0,0-.975.1,5.408,5.408,0,0,1,.381-1.02,6.31,6.31,0,0,1,.7-1.266,7.466,7.466,0,0,1,.9-1.105A10.03,10.03,0,0,1,11.8,10.8a6.4,6.4,0,0,1,1.071-.695,5.658,5.658,0,0,1,.975-.525l.808-.333.711-.3-.728-2.907-.9.216c-.286.072-.636.156-1.033.257a8.074,8.074,0,0,0-1.323.468,9.316,9.316,0,0,0-1.542.7A14.082,14.082,0,0,0,8.207,8.724a11.7,11.7,0,0,0-1.575,1.417,10.545,10.545,0,0,0-1.364,1.743,12.16,12.16,0,0,0-1.053,1.948,16.5,16.5,0,0,0-.7,2,18.108,18.108,0,0,0-.576,3.655,18.7,18.7,0,0,0,.042,2.621c.022.306.065.6.1.808l.038.252.039-.009A6.75,6.75,0,1,0,9.75,15Zm16.5,0a6.64,6.64,0,0,0-.975.1,5.408,5.408,0,0,1,.381-1.02,6.31,6.31,0,0,1,.7-1.266,7.466,7.466,0,0,1,.9-1.105A10.031,10.031,0,0,1,28.3,10.8a6.4,6.4,0,0,1,1.071-.695,5.658,5.658,0,0,1,.975-.525l.808-.333.711-.3-.728-2.907-.9.216c-.286.072-.636.156-1.033.257a8.074,8.074,0,0,0-1.323.468,9.288,9.288,0,0,0-1.542.7,14.082,14.082,0,0,0-1.636,1.038,11.756,11.756,0,0,0-1.575,1.416,10.545,10.545,0,0,0-1.364,1.743,12.16,12.16,0,0,0-1.053,1.948,16.5,16.5,0,0,0-.7,2,18.108,18.108,0,0,0-.576,3.655,18.7,18.7,0,0,0,.042,2.621c.022.306.065.6.095.808l.038.252.039-.009A6.75,6.75,0,1,0,26.25,15Z"
+                                    transform="translate(-2.911 -6.046)" />
+                            </svg>
+                        </div>
+                        <div class="testi-txt">
+                            <p>{{testimonial.titre}}</p>
+                        </div>
+                        <a [routerLink]="['/site/testimonial',testimonial.id]">See more</a>
+                        <h5>{{testimonial.witness_name}}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pagination" *ngIf="testimonials.length > 0">
+            <pagination-controls (pageChange)=" p = $event"></pagination-controls>
+        </div>
+    </div>
+
+</div>
+
+<app-footer></app-footer>
+<!-- Sermons content -->
+<!-- Sermons content -->

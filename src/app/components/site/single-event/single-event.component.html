@@ -1,0 +1,64 @@
+<app-nav></app-nav>
+<app-social></app-social>
+
+<!-- Banner content -->
+<!-- Banner content -->
+
+<div class="banner" style="background:url(../../../../assets/ressources/img/oaks-18.jpg);">
+    <div class="banner-content">
+        <div class="banner-title">
+            <h1>Single event</h1>
+            <h3>Impact the world with gospel of the kingdom. </h3>
+        </div>
+    </div>
+</div>
+
+<!-- Banner content -->
+<!-- Banner content -->
+
+<!-- Bloc Default -->
+<!-- Bloc Default -->
+
+<div class="bloc-default">
+    <div class="bloc-default-content page-contenair pt-pb" *ngIf="event">
+        <div class="default-title center">
+            <h1>{{event.titre}}</h1>
+        </div>
+
+        <div class="media-image">
+            <div class="m-img">
+                <img src="{{imageUrl}}/events/{{event.cover}}" alt="{{event.titre}}">
+            </div>
+
+            <div class="media-publish">
+                <span><em>Publisher by : <strong>{{event.user_posted}}</strong></em></span>
+                <span><em>Date : {{event.date_event}}</em></span>
+            </div>
+        </div>
+
+        <div class="media-text">
+            <p>{{event.full_desc}}</p>
+        </div>
+
+        <div class="single-similar">
+            <div class="single-title">
+                <h2>More events</h2>
+            </div>
+            <div class="similar-flex">
+                <a href="/site/event/{{other.id}}" class="similar-box" *ngFor="let other of others">
+                    <div class="similar-image">
+                        <img src="{{imageUrl}}/events/{{other.cover}}" alt="">
+                    </div>
+
+                    <div class="similar-body">
+                        <h3>{{other.titre}}</h3>
+                        <p>{{other.very_small_desc}}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<app-footer></app-footer>

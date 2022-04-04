@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "palatino";
+  src: url("../ressources/fonts/PALA.TTF") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gothic-Regular";
+  src: url("../ressources/fonts/ZenMaruGothic-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gothic-Medium";
+  src: url("../ressources/fonts/ZenMaruGothic-Medium.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gothic-Bold";
+  src: url("../ressources/fonts/ZenMaruGothic-Bold.ttf") format("truetype");
+  font-display: swap;
+}
+
+/* Dashboard */
+/* Dashboard */
+
+@font-face {
+  font-family: "Lato-Regular";
+  src: url("../ressources/fonts/Lato-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato-Light";
+  src: url("../ressources/fonts/Lato-Light.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato-Bold";
+  src: url("../ressources/fonts/Lato-Bold.ttf") format("truetype");
+  font-display: swap;
+}
+
+/* Dashboard */
+/* Dashboard */
+

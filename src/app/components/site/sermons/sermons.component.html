@@ -1,0 +1,90 @@
+<app-nav></app-nav>
+<app-social></app-social>
+
+<!-- Banner content -->
+<!-- Banner content -->
+
+<div class="banner" style="background:url(../../../../assets/ressources/img/6.jpg);">
+    <div class="banner-content">
+        <div class="banner-title">
+            <h1>Our sermons</h1>
+            <h3>Impact the world with gospel of the kingdom. </h3>
+        </div>
+    </div>
+</div>
+
+<!-- Banner content -->
+<!-- Banner content -->
+
+<!-- Sermons content -->
+<!-- Sermons content -->
+
+<div class="sermons">
+    <div class="sermons-content page-contenair pt-pb">
+        <div class="default-title center">
+            <h1>Our sermons</h1>
+        </div>
+
+        <div class="media-flex">
+            <div class="media-search">
+                <div class="media-header">
+                    <div class="speak-title">
+                        <h3>Speakers</h3>
+                    </div>
+
+                    <div class="group-form">
+                        <input type="text" name="" id="" placeholder="Search by title" [(ngModel)]="title" (ngModelChange)="search()">
+                        <span class="icon-search"></span>
+                    </div>
+                </div>
+
+                <div class="searching-saves">
+                    <div class="search-only" *ngFor="let preacher of preachers" (click)="searchByPreacher(preacher.preacher_name)">{{preacher.preacher_name}}</div>
+
+                    <div class="search-only" (click)="ngOnInit()">Reset</div>
+                </div>
+
+                <div class="media-bottom">
+                    <div class="speak-title">
+                        <h3>Search by date</h3>
+                    </div>
+
+                    <div class="group-form">
+                        <input type="date" name="" id="" placeholder="Search event" [(ngModel)]="date" (ngModelChange)="searchDate()">
+                    </div>
+                </div>
+            </div>
+
+            <div class="media-box" *ngIf="sermons.length > 0">
+                <div class="carousel-card media-card"
+                    *ngFor="let sermon of sermons | paginate : {itemsPerPage:8,currentPage:p}">
+                    <div class="carousel-image">
+                        <img src="{{imageUrl}}/sermons/{{sermon.image}}" alt="">
+                        <a [routerLink]="['/site/sermon',sermon.id]" class="carousel-btn">
+                            <span class="icon-play-1"></span>
+                        </a>
+                    </div>
+                    <div class="carousel-body">
+                        <h3>{{sermon.titre}}</h3>
+                        <p>
+                            {{sermon.small_desc}}
+                        </p>
+
+                        <div class="small-text">
+                            <span class="date">{{sermon.date_sermon}}</span>
+                            <span class="publish"> Preacher name : {{sermon.preacher_name}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pagination" *ngIf="sermons.length > 0">
+            <pagination-controls (pageChange)=" p = $event"></pagination-controls>
+        </div>
+    </div>
+
+</div>
+
+<app-footer></app-footer>
+<!-- Sermons content -->
+<!-- Sermons content -->

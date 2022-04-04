@@ -1,0 +1,172 @@
+<div class="body-dashboard">
+    <div class="wrapper-dash">
+        <app-side-nav [addActive]="addActive"></app-side-nav>
+        <div class="wrapper-nav-resp">
+            <div class="nav-resp">
+                <div class="nav-resp-left">
+                    <div class="nav-resp-logo">
+                        <img src="../../../assets/ressources/logo/72x72.png" alt="">
+                    </div>
+
+                    <div class="nav-resp-profil">
+                        <div class="nav-profil-circle">
+                            <img src="../../../assets/ressources/icons/male_user.svg" alt="">
+                        </div>
+                        <div class="dot-line"></div>
+                    </div>
+                </div>
+
+                <div class="nav-resp-toggle" (click)="toggle()">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="dash">
+            <div class="dash-title padding-10">
+                <h1>Dashboard</h1>
+            </div>
+
+            <div class="dash-statis">
+                <div class="stat-box">
+                    <div class="stat-head">
+                        <h2>Events</h2>
+                        <div class="stat-icon">
+                            <i class='bx bx-news'></i>
+                        </div>
+                    </div>
+
+                    <div class="stat-num">
+                        <h1>{{totEvent > 0 ? totEvent : 0}}</h1>
+                    </div>
+                </div>
+
+                <div class="stat-box">
+                    <div class="stat-head">
+                        <h2>Gallery</h2>
+                        <div class="stat-icon">
+                            <i class='bx bx-photo-album'></i>
+                        </div>
+                    </div>
+
+                    <div class="stat-num">
+                        <h1>{{totGalerie > 0 ? totGalerie : 0}}</h1>
+                    </div>
+                </div>
+
+                <div class="stat-box">
+                    <div class="stat-head">
+                        <h2>Sermons</h2>
+                        <div class="stat-icon">
+                            <i _ngcontent-vui-c16="" class="bx bx-video"></i>
+                        </div>
+                    </div>
+
+                    <div class="stat-num">
+                        <h1>{{totSermon > 0 ? totSermon : 0}}</h1>
+                    </div>
+                </div>
+
+                <div class="stat-box">
+                    <div class="stat-head">
+                        <h2>Ministries</h2>
+                        <div class="stat-icon">
+                            <i _ngcontent-qxg-c16="" class="bx bx-church"></i>
+                        </div>
+                    </div>
+
+                    <div class="stat-num">
+                        <h1>{{totMinistry > 0 ? totMinistry : 0}}</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dash-tableau padding-10">
+                <div class="filter">
+                    <!-- <div class="filter-head">
+                        <h2>Filter</h2>
+                        <div class="fl-icon" (click)="Filter()">
+                            <i class='bx bx-filter-alt'></i>
+                        </div>
+                    </div> -->
+
+                    <!-- <div class="filter-inputs">
+                        <form action="" method="post" class="form-filter">
+                            <div class="form-filter-content">
+                                <div class="group-form">
+                                    <label for="date">date</label>
+                                    <div class="input-flex">
+                                        <div>
+                                            <span class="label">Au</span>
+                                            <input type="date" name="" id="" class="input-control">
+                                        </div>
+                                        <div>
+                                            <span class="label">Du</span>
+                                            <input type="date" name="" id="" class="input-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="group-form">
+                                    <label for="titre">title</label>
+                                    <input type="text" name="" id="" placeholder="Search by title"
+                                        class="input-control">
+                                </div>
+
+                                <div class="group-form">
+                                    <label for="titre">description</label>
+                                    <input type="text" name="" id="" placeholder="Search by description"
+                                        class="input-control">
+                                </div>
+                            </div>
+
+                            <div class="form-filter-btn">
+                                <button>Filter</button>
+                            </div>
+                        </form>
+                    </div> -->
+                </div>
+
+                <div class="dash-title-search">
+                    <h2>Events list</h2>
+                    <div class="dsh-right">
+                        
+                        <div class="group-form">
+                            <input type="text" placeholder="Search.." name="nom" [(ngModel)]="nom" (ngModelChange)="search()">
+                            <div class="tab-search">
+                                <i class='bx bx-search'></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table">
+                    <table class="wd-600 wd-900">
+                        <thead>
+                            <th (click)="sort('id')">#ID</th>
+                            <th (click)="sort('titre')">Title <i class='bx bxs-sort-alt'></i></th>
+                            <th (click)="sort('description')">Description <i class='bx bxs-sort-alt'></i></th>
+                            <th (click)="sort('date')">Date event <i class='bx bxs-sort-alt'></i></th>
+                            <th>Action</th>
+                        </thead>
+
+                        <tbody>
+                            <tr *ngFor="let i = index let event of events | orderBy: key : reverse | paginate : {itemsPerPage:6,currentPage:p}">
+                                <td>{{i+1}}</td>
+                                <td>{{event.titre}}</td>
+                                <td>{{event.small_desc}}</td>
+                                <td>{{event.date_event}}</td>
+                                <td>
+                                    <div class="actions-flex">
+                                        <a [routerLink]="['/admin/event/',event.id]" routerLinkActive="router-link-active"  class="action green" title="detail">
+                                            <i class='bx bx-detail'></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

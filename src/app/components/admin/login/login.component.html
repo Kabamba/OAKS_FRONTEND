@@ -1,0 +1,27 @@
+<div class="wrapper-login">
+    <form [formGroup]="brandForm" autocomplete="off" class="card">
+        <div class="card-title">
+            <img src="../../../assets/ressources/logo/144x144.png" alt="">
+            <h2>Admin Login</h2>
+        </div>
+        <div class="card-box">
+            <div class="card-error bg-danger" *ngIf="invalide">
+                <P>{{invalide}}</P>
+            </div>
+
+            <div class="group-form">
+                <label for="email">Email</label>
+                <input type="text" id="email" formControlName="email" placeholder="Votre adresse mail" [class.input-error]="errors.email" class="input-control">
+            </div>
+
+            <div class="group-form">
+                <label for="email">Password</label>
+                <input type="password" id="password" formControlName="password" placeholder="Votre mot de passe" [class.input-error]="errors.password" class="input-control">
+            </div>
+
+            <div class="form-btn">
+                <button class="bg-blue" (click)="login()" [disabled]="isLoading">Login</button>
+            </div>
+        </div>
+    </form>
+</div>

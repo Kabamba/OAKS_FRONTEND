@@ -1,0 +1,198 @@
+<div class="body-dashboard">
+    <div class="wrapper-dash">
+        <app-side-nav [addActive]="addActive"></app-side-nav>
+        <div class="wrapper-nav-resp">
+            <div class="nav-resp">
+                <div class="nav-resp-left">
+                    <div class="nav-resp-logo">
+                        <img src="../../../assets/ressources/logo/72x72.png" alt="">
+                    </div>
+
+                    <div class="nav-resp-profil">
+                        <div class="nav-profil-circle">
+                            <img src="../../../assets/ressources/icons/male_user.svg" alt="">
+                        </div>
+                        <div class="dot-line"></div>
+                    </div>
+                </div>
+
+                <div class="nav-resp-toggle" (click)="toggle()">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+        <!-- Dash Modal -->
+        <!-- Dash Modal -->
+        <div class="dash-modal" (click)="closeModal()" [class.active]="AppearModal">
+            <div class="dash-modal-wrapper" (click)="stopPropagation($event)">
+                <div class="dsh-m-head flex space-between align-items">
+                    <h2>Add sermon</h2>
+
+                    <div class="cancel" (click)="closeModal()">
+                        <i class='bx bx-x'></i>
+                    </div>
+                </div>
+
+                <div class="dsh-m-form">
+                    <form [formGroup]="brandForm">
+                        <div class="group-form-flex space-between">
+                            <input type="text" name="" formControlName="id" hidden>
+
+                            <div class="group-form">
+                                <label for="title">Title</label>
+                                <input type="text" name="" formControlName="titre" id="title" placeholder="Title" class="input-control" [class.input-error]="errors.title">
+                                <div class="text-error" *ngIf="errors.title">{{errors.title}}</div>
+                            </div>
+
+                            <div class="group-form">
+                                <label for="pastor">Preacher name</label>
+                                <input type="text" formControlName="preacher_name" id="pastor" placeholder="Preacher name" class="input-control" [class.input-error]="errors.preacher_name">
+                                <div class="text-error" *ngIf="errors.preacher_name">{{errors.preacher_name}}</div>
+                            </div>
+                        </div>
+
+                        <div class="group-form">
+                            <label for="link">link video</label>
+                            <input type="url" formControlName="url" id="link" placeholder="Link a video" class="input-control" [class.input-error]="errors.url">
+                            <div class="text-error" *ngIf="errors.url">{{errors.url}}</div>
+                        </div>
+
+                        <div class="group-form">
+                            <label for="phone">Description</label>
+                            <textarea name="" formControlName="descriptions"  cols="30" rows="5" class="input-control" [class.input-error]="errors.descriptions"></textarea>
+                            <div class="text-error" *ngIf="errors.descriptions">{{errors.descriptions}}</div>
+                        </div>
+
+                        <div class="group-form">
+                            <label for="">Cover picture</label>
+                            <label class="file-box"  [class.input-error]="errors.image">
+                                <input type="file" (change)="loadCover($event)" id="cover" hidden>
+                                <div class="file-icon">
+                                    <i class='bx bx-image-add'></i>
+                                </div>
+                            </label>
+                            <div class="text-error" *ngIf="errors.image">{{errors.image}}</div>
+
+                            <div class="file-preview" *ngIf="chemin">
+                                <div class="fl-pr-img">
+                                    <img src="{{chemin}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-btn">
+                            <button class="btn bg-success" (click)="sauvegarder()" [disabled]="isAdding">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Dash Modal -->
+        <!-- Dash Modal -->
+
+        <div class="dash">
+            <div class="dash-title padding-10">
+                <h1>Manage sermons</h1>
+            </div>
+
+            <div class="dash-tableau padding-10">
+                <!-- <div class="filter">
+                    <div class="filter-head">
+                        <h2>Filter</h2>
+                        <div class="fl-icon" (click)="Filter()">
+                            <i class='bx bx-filter-alt'></i>
+                        </div>
+                    </div>
+
+                    <div class="filter-inputs">
+                        <form action="" method="post" class="form-filter">
+                            <div class="form-filter-content">
+                                <div class="group-form">
+                                    <label for="date">date</label>
+                                    <div class="input-flex">
+                                        <div>
+                                            <span class="label">Au</span>
+                                            <input type="date" name="" id="" class="input-control">
+                                        </div>
+                                        <div>
+                                            <span class="label">Du</span>
+                                            <input type="date" name="" id="" class="input-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="group-form">
+                                    <label for="titre">title</label>
+                                    <input type="text" name="" id="" placeholder="Search by title"
+                                        class="input-control">
+                                </div>
+
+                                <div class="group-form">
+                                    <label for="titre">description</label>
+                                    <input type="text" name="" id="" placeholder="Search by description"
+                                        class="input-control">
+                                </div>
+                            </div>
+
+                            <div class="form-filter-btn">
+                                <button>Filter</button>
+                            </div>
+                        </form>
+                    </div>
+                </div> -->
+
+                <div class="dash-title-search">
+                    <div class="dsh-right">
+                        <div class="group-form">
+                            <input type="text" placeholder="Search.." [(ngModel)]="word" (ngModelChange)="search()">
+                            <div class="tab-search">
+                                <i class='bx bx-search'></i>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-add" (click)="showModal()">Add sermon <i
+                            class='bx bx-plus-circle'></i></button>
+                </div>
+                <div class="table">
+                    <table class="wd-600 wd-900">
+                        <thead>
+                            <th>#ID</th>
+                            <th>Titre <i class='bx bxs-sort-alt'></i></th>
+                            <th>Description <i class='bx bxs-sort-alt'></i></th>
+                            <th>Preacher <i class='bx bxs-sort-alt'></i></th>
+                            <th>Date <i class='bx bxs-sort-alt'></i></th>
+                            <th>Action</th>
+                        </thead>
+
+                        <tbody>
+                            <tr *ngFor="let i = index let sermon of sermons | paginate : {itemsPerPage:10,currentPage:p}">
+                                <td>{{i+1}}</td>
+                                <td>{{sermon.titre}}</td>
+                                <td>{{sermon.small_desc}}.</td>
+                                <td>{{sermon.preacher_name}}</td>
+                                <td>{{sermon.date_sermon}}</td>
+                                <td>
+                                    <div class="actions-flex">
+                                        <button class="action danger" title="delete" (click)="delete(sermon.id)">
+                                            <i class='bx bx-trash'></i>
+                                        </button>
+                                        <button class="action blue" type="button" title="edit" (click)="show(sermon.id)">
+                                            <i class='bx bx-edit'></i>
+                                        </button>
+                                        <a [routerLink]="['/admin/sermon/',sermon.id]" routerLinkActive="router-link-active"  class="action green" title="detail">
+                                            <i class='bx bx-detail'></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pagination">
+                        <pagination-controls (pageChange)=" p = $event"></pagination-controls>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

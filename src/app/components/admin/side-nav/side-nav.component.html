@@ -1,0 +1,81 @@
+<div class="wrapper-nav" [class.active]="addActive">
+    <div class="nav">
+        <div class="nav-logo">
+            <div class="nav-logo-img">
+                <img src="../../../assets/ressources/logo/72x72.png" alt="">
+            </div>
+            <div class="nav-logo-text">
+                <h2>BGI ADMIN</h2>
+            </div>
+        </div>
+
+        <div class="nav-links">
+            <div class="nav-link-up">
+                <a routerLink="/admin/home" routerLinkActive="active" class="link">
+                    <div class="l-icon">
+                        <i class='bx bxs-dashboard'></i>
+                    </div>
+                    <div class="l-title">Dashboard</div>
+                </a>
+
+                <a routerLink="/admin/admins" routerLinkActive="active" class="link">
+                    <div class="l-icon">
+                        <i class='bx bx-user'></i>
+                    </div>
+                    <div class="l-title">administrators</div>
+                </a>
+
+                <a routerLink="/admin/events" routerLinkActive="active" class="link">
+                    <div class="l-icon">
+                        <i class='bx bx-news'></i>
+                    </div>
+                    <div class="l-title">events</div>
+                </a>
+
+                <a routerLink="/admin/gallery" routerLinkActive="active" class="link">
+                    <div class="l-icon">
+                        <i class='bx bx-photo-album'></i>
+                    </div>
+                    <div class="l-title">gallery</div>
+                </a>
+
+                <a routerLink="/admin/sermons" routerLinkActive="active" class="link">
+                    <div class="l-icon">
+                        <i class='bx bx-video'></i>
+                    </div>
+                    <div class="l-title">sermons</div>
+                </a>
+
+                <a routerLink="/admin/ministries" routerLinkActive="active" class="link">
+                    <div class="l-icon">
+                        <i class='bx bx-church'></i>
+                    </div>
+                    <div class="l-title">ministries</div>
+                </a>
+
+                
+                <a routerLink="/admin/testimonials" routerLinkActive="active" class="link">
+                    <div class="l-icon">
+                        <i class='bx bx-church'></i>
+                    </div>
+                    <div class="l-title">testimonials</div>
+                </a>
+            </div>
+            <div class="nav-link-bottom">
+                <a href="#" class="link">
+                    <div class="l-icon">
+                        <i class='bx bx-user-circle'></i>
+                    </div>
+                    <div class="l-title">Jhon Doe</div>
+                </a>
+
+                <a (click)="logout()" class="link">
+                    <div class="l-icon">
+                        <i class='bx bx-power-off'></i>
+                    </div>
+                    <div class="l-title">log out</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

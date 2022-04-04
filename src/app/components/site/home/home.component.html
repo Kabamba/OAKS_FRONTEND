@@ -1,0 +1,322 @@
+<app-nav></app-nav>
+<app-social></app-social>
+
+<!-- Banner content -->
+<!-- Banner content -->
+<div class="banner-slider">
+    <swiper [config]="config_slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="banner"
+                    style="background:url(../../../../assets/ressources/img/banner/banner.jpg);background-position: bottom center;">
+                    <div class="banner-content">
+                        <div class="banner-title">
+                            <h1>The Kingdom of heaven <br> has come near</h1>
+                            <h3>Impact the world with gospel of the kingdom. </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="banner"
+                    style="background:url(../../../../assets/ressources/img/5.jpg);background-position: bottom center;">
+                    <div class="banner-content">
+                        <div class="banner-title">
+                            <!-- <h1>The Kingdom of heaven <br> has come near</h1>
+                            <h3>Impact the world with gospel of the kingdom. </h3> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </swiper>
+</div>
+
+<!-- Banner content -->
+<!-- Banner content -->
+
+
+<!-- Bloc Default -->
+<!-- Bloc Default -->
+
+<div class="bloc-default">
+    <div class="bloc-default-content page-contenair pt-pb">
+        <div class="default-title">
+            <h1>Welcome to the Oaks of Rightneouness</h1>
+        </div>
+
+        <div class="bloc-default-flex">
+            <div class="default-f-a">
+                <div class="d-img">
+                    <div class="frame"></div>
+                    <img src="../../../../assets/ressources/img/4.jpg" alt="">
+                </div>
+            </div>
+            <div class="default-f-b">
+                <div class="d-text">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ipsa incidunt suscipit a, itaque
+                        vero ad optio, earum impedit repellendus quis cupiditate consequuntur maiores ab laboriosam
+                        harum doloremque dolor! Consequuntur temporibus tempora ab? Saepe consequuntur explicabo, autem
+                        dolorem sequi voluptatum temporibus pariatur aut iure, veniam adipisci doloribus repudiandae
+                        doloremque provident sint voluptatibus. Impedit porro, modi commodi libero beatae quas harum
+                        culpa, et autem consectetur odio tempora ut ea officiis explicabo dolore dicta eos. Ducimus ab
+                        architecto, reiciendis aperiam similique dolorum aliquam? Ratione labore modi veritatis sed,
+                        aliquid voluptas nobis distinctio iure autem veniam, velit repellendus dicta corporis
+                        consectetur.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bloc-default">
+    <div class="bloc-default-content page-contenair pt-pb">
+        <div class="default-title align-right">
+            <h1>About the pastor </h1>
+        </div>
+
+        <div class="bloc-default-flex reverse-row">
+            <div class="default-f-a">
+                <div class="d-img">
+                    <div class="frame ps-x"></div>
+                    <img src="../../../../assets/ressources/img/oaks-15.jpg" alt="">
+                </div>
+            </div>
+            <div class="default-f-b mg-right">
+                <div class="d-text pd-right">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ipsa incidunt suscipit a, itaque
+                        vero ad optio, earum impedit repellendus quis cupiditate consequuntur maiores ab laboriosam
+                        harum doloremque dolor! Consequuntur temporibus tempora ab? Saepe consequuntur explicabo, autem
+                        dolorem sequi voluptatum temporibus pariatur aut iure, veniam adipisci doloribus repudiandae
+                        doloremque provident sint voluptatibus. Impedit porro, modi commodi libero beatae quas harum
+                        culpa, et autem consectetur odio tempora ut ea officiis explicabo dolore dicta eos. Ducimus ab
+                        architecto, reiciendis aperiam similique dolorum aliquam? Ratione labore modi veritatis sed,
+                        aliquid voluptas nobis distinctio iure autem veniam, velit repellendus dicta corporis
+                        consectetur.</p>
+
+                    <div class="default-btn mt-40">
+                        <a href="#">Find out more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bloc Default -->
+<!-- Bloc Default -->
+
+
+<!-- Carousel Sermons -->
+<!-- Carousel Sermons -->
+
+<div class="carousel-sermons" *ngIf="sermons.length > 0">
+    <div class="carousel-sermon pt-pb">
+        <div class="default-title center">
+            <h1>Our sermons</h1>
+        </div>
+
+        <div class="carousel-cards page-contenair">
+            <swiper [config]="config">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" *ngFor="let sermon of sermons">
+                        <div class="carousel-card">
+                            <div class="carousel-image">
+                                <img src="{{imageUrl}}/sermons/{{sermon.image}}" alt="">
+                                <a [routerLink]="['/site/sermon',sermon.id]" class="carousel-btn">
+                                    <span class="icon-play-1"></span>
+                                </a>
+                            </div>
+                            <div class="carousel-body">
+                                <h3>{{sermon.titre}}</h3>
+                                <p>
+                                   {{sermon.small_desc}}
+                                </p>
+
+                                <div class="small-text">
+                                    <span class="date">{{sermon.date_sermon}}</span>
+                                    <span class="publish"> Published by : {{sermon.user_posted}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Add Arrows -->
+                <div class="swiper-button-next">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17.621" height="27.492" viewBox="0 0 17.621 27.492">
+                        <path id="chevron-back-outline" d="M26.494,7.875,12.938,19.244,26.494,30.613"
+                            transform="translate(28.871 32.99) rotate(180)" fill="none" stroke="#1e34d5"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="3.375" />
+                    </svg>
+
+                </div>
+                <div class="swiper-button-prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17.621" height="27.492" viewBox="0 0 17.621 27.492">
+                        <path id="chevron-back-outline" d="M26.494,7.875,12.938,19.244,26.494,30.613"
+                            transform="translate(-11.25 -5.498)" fill="none" stroke="#1e34d5" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="3.375" />
+                    </svg>
+                </div>
+            </swiper>
+
+            <div class="default-btn center mt-80">
+                <a [routerLink]="['/site/sermons']" >See more sermons </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Carousel Sermons -->
+<!-- Carousel Sermons -->
+
+<!-- Carousel Events -->
+<!-- Carousel Events -->
+<div class="carousel-events" *ngIf="events.length > 0">
+    <div class="carousel-event">
+        <div class="event-banner">
+            <div class="default-title center">
+                <h1>Our events</h1>
+            </div>
+        </div>
+
+        <div class="carousel-events-cards page-contenair">
+            <swiper [config]="config_1">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" *ngFor="let event of events">
+                        <div class="carousel-event-card">
+                            <div class="event-image">
+                                <img src="{{imageUrl}}/events/{{event.cover}}" alt="">
+                            </div>
+                            <div class="event-section">
+                                <div class="event-date">
+                                    <span>{{event.date_event}}</span>
+                                </div>
+                                <div class="event-text">
+                                    <div class="event-title">
+                                        <h3>{{event.titre}}</h3>
+                                        <p><span class="icon-user"></span>posted by : <abbr>{{event.user_posted}}</abbr></p>
+                                    </div>
+                                    <div class="event-content">
+                                        <p>{{event.small_desc}}</p>
+                                    </div>
+                                    <div class="default-btn">
+                                        <a [routerLink]="['/site/event',event.id]">Find out more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="carousel-event-btn">
+                    <div class="event-btns">
+                        <div class="swiper-button-prev">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="38.853" height="65.605"
+                                viewBox="0 0 38.853 65.605">
+                                <g id="arrow-left" transform="translate(-727.147 -5247.574)">
+                                    <rect id="Rectangle_6" data-name="Rectangle 6" width="45.788" height="9.158"
+                                        rx="4.579" transform="translate(727.147 5279.951) rotate(-45)" fill="#1e34d5" />
+                                    <rect id="Rectangle_7" data-name="Rectangle 7" width="45.788" height="9.158"
+                                        rx="4.579" transform="translate(733.623 5274.326) rotate(45)" fill="#1e34d5" />
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="swiper-button-next">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="38.853" height="65.605"
+                                viewBox="0 0 38.853 65.605">
+                                <g id="arrow-right" transform="translate(766 5313.179) rotate(-180)">
+                                    <rect id="Rectangle_6" data-name="Rectangle 6" width="45.788" height="9.158"
+                                        rx="4.579" transform="translate(727.147 5279.951) rotate(-45)" fill="#1e34d5" />
+                                    <rect id="Rectangle_7" data-name="Rectangle 7" width="45.788" height="9.158"
+                                        rx="4.579" transform="translate(733.623 5274.326) rotate(45)" fill="#1e34d5" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </swiper>
+        </div>
+    </div>
+</div>
+<!-- Carousel Events -->
+<!-- Carousel Events -->
+
+<!-- Carousel Testimonials -->
+<!-- Carousel Testimonials -->
+<div class="carousel-testimonials" *ngIf="testimonials.length > 0">
+    <div class="carousel-testimonial pt-pb">
+        <div class="default-title center">
+            <h1>Testimonials</h1>
+        </div>
+
+        <div class="carousel-testi-cards page-contenair">
+            <swiper [config]="config_2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" *ngFor="let testimonial of testimonials">
+                        <div class="carousel-testi-card">
+                            <div class="testi-image">
+                                <img src="{{imageUrl}}/testimonials/{{testimonial.cover}}" alt="">
+                            </div>
+
+                            <div class="testi-body">
+                                <div class="quote">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30.09" height="22.455"
+                                        viewBox="0 0 30.09 22.455">
+                                        <path id="bxs-quote-alt-left"
+                                            d="M9.75,15a6.64,6.64,0,0,0-.975.1,5.408,5.408,0,0,1,.381-1.02,6.31,6.31,0,0,1,.7-1.266,7.466,7.466,0,0,1,.9-1.105A10.03,10.03,0,0,1,11.8,10.8a6.4,6.4,0,0,1,1.071-.695,5.658,5.658,0,0,1,.975-.525l.808-.333.711-.3-.728-2.907-.9.216c-.286.072-.636.156-1.033.257a8.074,8.074,0,0,0-1.323.468,9.316,9.316,0,0,0-1.542.7A14.082,14.082,0,0,0,8.207,8.724a11.7,11.7,0,0,0-1.575,1.417,10.545,10.545,0,0,0-1.364,1.743,12.16,12.16,0,0,0-1.053,1.948,16.5,16.5,0,0,0-.7,2,18.108,18.108,0,0,0-.576,3.655,18.7,18.7,0,0,0,.042,2.621c.022.306.065.6.1.808l.038.252.039-.009A6.75,6.75,0,1,0,9.75,15Zm16.5,0a6.64,6.64,0,0,0-.975.1,5.408,5.408,0,0,1,.381-1.02,6.31,6.31,0,0,1,.7-1.266,7.466,7.466,0,0,1,.9-1.105A10.031,10.031,0,0,1,28.3,10.8a6.4,6.4,0,0,1,1.071-.695,5.658,5.658,0,0,1,.975-.525l.808-.333.711-.3-.728-2.907-.9.216c-.286.072-.636.156-1.033.257a8.074,8.074,0,0,0-1.323.468,9.288,9.288,0,0,0-1.542.7,14.082,14.082,0,0,0-1.636,1.038,11.756,11.756,0,0,0-1.575,1.416,10.545,10.545,0,0,0-1.364,1.743,12.16,12.16,0,0,0-1.053,1.948,16.5,16.5,0,0,0-.7,2,18.108,18.108,0,0,0-.576,3.655,18.7,18.7,0,0,0,.042,2.621c.022.306.065.6.095.808l.038.252.039-.009A6.75,6.75,0,1,0,26.25,15Z"
+                                            transform="translate(-2.911 -6.046)" />
+                                    </svg>
+
+                                </div>
+                                <div class="testi-txt">
+                                    <p>{{testimonial.small_desc}}?</p>
+                                </div>
+                                <a [routerLink]="['/site/testimonial',testimonial.id]">See more</a>
+                                <h5>{{testimonial.witness_name}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-testi-btn">
+                    <div class="testi-btns">
+                        <div class="swiper-button-prev">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="37.41" height="36.189"
+                                viewBox="0 0 37.41 36.189">
+                                <g id="arrow-back-outline" transform="translate(-5.344 -5.488)">
+                                    <path id="Tracé_6" data-name="Tracé 6" d="M22.739,39.291,7.031,23.583,22.739,7.875"
+                                        fill="none" stroke="#1e34d5" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="3.375" />
+                                    <path id="Tracé_7" data-name="Tracé 7" d="M8.438,18H40.29"
+                                        transform="translate(0.776 5.583)" fill="none" stroke="#1e34d5"
+                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="3.375" />
+                                </g>
+                            </svg>
+
+                        </div>
+                        <div class="swiper-button-next">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="37.411" height="36.19"
+                                viewBox="0 0 37.411 36.19">
+                                <g id="arrow-forward-outline" transform="translate(-5.344 -5.488)">
+                                    <path id="Tracé_8" data-name="Tracé 8" d="M18.844,7.875,34.552,23.583,18.844,39.292"
+                                        transform="translate(6.514 0)" fill="none" stroke="#1e34d5"
+                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="3.375" />
+                                    <path id="Tracé_9" data-name="Tracé 9" d="M38.885,18H7.031"
+                                        transform="translate(0 5.583)" fill="none" stroke="#1e34d5"
+                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="3.375" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </swiper>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
+<!-- Carousel Testimonials -->
+<!-- Carousel Testimonials -->

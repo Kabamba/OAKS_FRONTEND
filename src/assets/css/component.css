@@ -1,0 +1,161 @@
+:root {
+  --white: #fff;
+  --color-primary: #1da1f2;
+  --color-success: #1bb607;
+  --color-danger: #eb4c3b;
+  --input-c-c: #bbbbbb;
+}
+
+/**
+ *
+ * Button default
+ *
+ */
+
+.btn {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 12px 15px;
+  color: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/*=============================================
+=            Section Forms        =
+=============================================*/
+
+/**
+ *
+ * Groupe Form Default
+ *
+ */
+
+.group-form {
+  width: 100%;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.group-form label {
+  display: block;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+  font-family: inherit;
+}
+
+/**
+ *
+ * Group Form Flex
+ *
+ */
+
+.group-form-flex {
+  display: flex;
+  width: 100%;
+}
+
+/**
+ *
+ * Input default
+ *
+ */
+
+.input-control {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-family: inherit;
+  border: 1px solid var(--input-c-c);
+  border-radius: 4px;
+  width: 100%;
+}
+
+/*=====  End of Section Forms  ======*/
+
+/**
+ *
+ * Block Couleur
+ *
+ */
+
+.bg-success {
+  background-color: var(--color-success);
+  color: var(--white);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+  color: var(--white);
+}
+
+.bg-danger {
+  background-color: var(--color-danger);
+  color: var(--white);
+}
+
+/*=============================================
+=            Section Box flex            =
+=============================================*/
+
+.flex {
+  display: flex;
+}
+
+.align-items {
+  align-items: center;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+.center {
+  justify-content: center;
+}
+/*=====  End of Section Box flex  ======*/
+
+/**
+ *
+ * Section-error
+ *
+ */
+
+.input-error {
+  border: 1px solid var(--color-danger);
+  background-color: #eb4d3b4b;
+}
+
+.text-error {
+  color: #eb4c3b;
+  font-size: 12px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.card-error {
+  border: 1px solid #eb4c3b;
+  padding: 20px;
+  margin: 10px 0;
+}
+/*=====  End of Section-error  ======*/

@@ -1,0 +1,57 @@
+.sermons {
+  width: 100%;
+  position: relative;
+}
+
+.sermons-content {
+  width: 100%;
+  position: relative;
+}
+
+.media-box .carousel-card {
+  width: calc(calc(100% / 3) - 20px) !important;
+  margin-right: 0px;
+  margin-left: 20px;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 620px) {
+  .media-box {
+    width: 100%;
+  }
+
+  .media-box .carousel-card {
+    width: 100% !important;
+    margin-left: 0px !important;
+  }
+}
+
+/* Mini Tablette */
+/* Mini Tablette */
+@media screen and (min-width: 700px) and (max-width: 900px) {
+  .media-box {
+    width: 100%;
+    margin-left: -20px;
+  }
+
+  .media-box .carousel-card {
+    width: calc(calc(100% / 2) - 20px) !important;
+    margin-right: 0px;
+    margin-left: 20px;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 905px) and (max-width: 1180px) {
+  .media-box {
+    width: 100%;
+    margin-left: -20px;
+  }
+
+  .media-box .carousel-card {
+    width: calc(calc(100% / 3) - 20px) !important;
+    margin-right: 0px;
+    margin-left: 20px;
+    margin-bottom: 30px;
+  }
+}

@@ -1,0 +1,88 @@
+<app-nav></app-nav>
+<app-social></app-social>
+
+<!-- Banner content -->
+<!-- Banner content -->
+
+<div class="banner" style="background:url(../../../../assets/ressources/img/oaks-18.jpg);">
+    <div class="banner-content">
+        <div class="banner-title">
+            <h1>Our events</h1>
+            <h3>Impact the world with gospel of the kingdom. </h3>
+        </div>
+    </div>
+</div>
+
+<!-- Banner content -->
+<!-- Banner content -->
+
+
+<!-- Event content -->
+<!-- Event content -->
+
+<div class="events">
+    <div class="events-content page-contenair pt-pb">
+        <div class="default-title center">
+            <h1>Our events</h1>
+        </div>
+
+        <div class="media-flex">
+            <div class="media-search">
+                <div class="media-header">
+                    <div class="speak-title">
+                        <h3>Search by title</h3>
+                    </div>
+
+                    <div class="group-form">
+                        <input type="text" placeholder="Search event" [(ngModel)]="title" (ngModelChange)="search()">
+                        <span class="icon-search"></span>
+                    </div>
+                </div>
+
+                <div class="media-bottom">
+                    <div class="speak-title">
+                        <h3>Search by date</h3>
+                    </div>
+
+                    <div class="group-form">
+                        <input type="date" name="" id="" placeholder="Search event" [(ngModel)]="date" (ngModelChange)="searchDate()">
+                    </div>
+                </div>
+            </div>
+
+            <div class="media-box">
+                <div class="carousel-event-card"
+                    *ngFor="let event of events | paginate : {itemsPerPage:8,currentPage:p}">
+                    <div class="event-image">
+                        <img src="{{imageUrl}}/events/{{event.cover}}" alt="">
+                    </div>
+                    <div class="event-section">
+                        <div class="event-date">
+                            <span>{{event.date_event}}</span>
+                        </div>
+                        <div class="event-text">
+                            <div class="event-title">
+                                <h3>{{event.titre}}</h3>
+                                <p><span class="icon-user"></span>posted by : <abbr>{{event.user_posted}}</abbr></p>
+                            </div>
+                            <div class="event-content">
+                                <p>{{event.small_desc}}</p>
+                            </div>
+                            <div class="default-btn">
+                                <a [routerLink]="['/site/event',event.id]">Find out more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination">
+                <pagination-controls (pageChange)=" p = $event"></pagination-controls>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
+
+<!-- Event content -->
+<!-- Event content -->

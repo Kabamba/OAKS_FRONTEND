@@ -1,0 +1,429 @@
+/* Mobile */
+/* Mobile */
+:root {
+  --padding-lr: 20px;
+}
+
+@media screen and (max-width: 690px) {
+  .page-contenair {
+    padding: 0 var(--padding-lr);
+  }
+
+  /*=============================================
+=            Banner Content            =
+=============================================*/
+
+  .banner-content .banner-title h1 {
+    font-size: 55px;
+  }
+
+  .banner-content .banner-title {
+    padding: 0 20px;
+  }
+
+  /*=====  End of Banner Content  ======*/
+  /*=============================================
+=            Bloc Default            =
+=============================================*/
+
+  .bloc-default-flex {
+    flex-wrap: wrap;
+  }
+
+  .default-search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  .default-search .filter-mobile {
+    display: block;
+  }
+
+  .default-search .icon-filter {
+    font-size: 30px;
+    color: var(--grey-secondary);
+  }
+
+  .default-search .group-form {
+    width: 85%;
+  }
+
+  .default-f-a,
+  .default-f-b {
+    width: 100%;
+    margin: 0;
+  }
+
+  .d-img .frame {
+    transform: translate(0px, 1px);
+    display: none;
+  }
+
+  .d-text {
+    padding: 0px;
+    margin-top: 40px;
+  }
+
+  /*=====  End of Bloc Default  ======*/
+
+  /*=============================================
+=            Section carousel-sermons
+=============================================*/
+
+  .carousel-card {
+    width: 100% !important;
+  }
+
+  .carousel-cards {
+    overflow-x: hidden;
+  }
+
+  .carousel-cards .swiper-container .swiper-button-prev {
+    left: 10px;
+  }
+
+  .carousel-cards .swiper-container .swiper-button-next {
+    left: 96% !important;
+  }
+
+  .carousel-sermon .swiper-slide {
+    width: 100% !important;
+    padding: 0 5px;
+  }
+
+  .carousel-sermons .default-btn {
+    margin-top: 30px;
+  }
+
+  /*=====  End of carousel-sermons  ======*/
+
+  /*=============================================
+=            Section Carousel Testimonials
+=============================================*/
+  .carousel-testi-cards {
+    width: 100%;
+  }
+
+  .carousel-testi-cards .swiper-slide {
+    padding: 0 10px;
+  }
+
+  .carousel-testi-card {
+    width: 100%;
+  }
+
+  /*=====  End of Carousel Testimonials  ======*/
+
+  /*=============================================
+  =            Section Carousel Events
+============================================*/
+
+  .carousel-event-card .event-image {
+    display: none;
+  }
+
+  .carousel-event-card .event-image::after {
+    display: none;
+  }
+
+  .carousel-event-card {
+    width: 100%;
+  }
+
+  .carousel-events-cards .swiper-slide {
+    padding: 0 12px;
+  }
+
+  .event-section {
+    width: 100%;
+    height: 430px;
+  }
+
+  .event-section .event-date::before {
+    background: #8e050580;
+  }
+
+  /*=====  End of Carousel Events  ======*/
+
+  /*=============================================
+=            Section Media content            =
+=============================================*/
+
+  .media-box {
+    width: 100%;
+  }
+
+  .media-flex {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .media-search {
+    width: 100% !important;
+    display: none;
+    margin-bottom: 30px;
+  }
+
+  .media-search.active {
+    display: block;
+  }
+
+  .media-image .m-img {
+    width: 100%;
+    height: 380px;
+  }
+
+  .media-publish {
+    width: 100%;
+  }
+
+  .single-similar{
+    width:100%;
+  }
+
+  .similar-flex{
+    flex-wrap:wrap;
+    width:100%;
+  }
+
+  .single-similar .similar-box{
+    width:100%;
+  }
+
+  /*=============================================
+=            Section Media content            =
+=============================================*/
+
+  /*=============================================
+=            Properties for All            =
+=============================================*/
+  .swiper-container {
+    width: 100% !important;
+    overflow: visible !important;
+    padding-bottom: 30px;
+  }
+
+  /*=============================================
+=            Properties for All            =
+=============================================*/
+}
+
+/* Mobile */
+/* Mobile */
+
+/* Mini Tablette */
+/* Mini Tablette */
+
+@media screen and (min-width: 700px) and (max-width: 900px) {
+  .page-contenair {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .default-search {
+    width: 100% !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  .default-search .group-form {
+    width: 90%;
+  }
+
+  .default-search .filter-mobile {
+    display: block;
+  }
+
+  .default-search .icon-filter {
+    font-size: 40px;
+    color: var(--grey-secondary);
+  }
+  /*=============================================
+  =            Section Carousel Events
+============================================*/
+
+  .event-banner {
+    background-position: center center;
+  }
+
+  .carousel-event-card {
+    width: 100%;
+  }
+
+  .carousel-events-cards .swiper-slide {
+    padding: 0 20px;
+  }
+
+  /*=====  End of Carousel Events  ======*/
+
+  /*=============================================
+=            Section Carousel Testimonials
+=============================================*/
+
+  .carousel-testi-cards {
+    width: 100%;
+  }
+
+  .carousel-testi-cards .swiper-slide {
+    padding: 0 10px;
+  }
+
+  .carousel-testi-card {
+    width: 100%;
+  }
+
+  /*=====  End of Carousel Testimonials  ======*/
+
+  /*=============================================
+=            Section Media content            =
+=============================================*/
+
+  .media-flex {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .media-search {
+    width: 100% !important;
+    display: none;
+    margin-bottom: 30px;
+  }
+
+  .media-search.active {
+    display: block;
+  }
+
+  .media-image .m-img {
+    width: 100%;
+    height: 540px;
+  }
+
+  .single-similar{
+    width:100%;
+  }
+
+  .similar-flex{
+    flex-wrap:wrap;
+    width:100%;
+  }
+
+  .media-publish {
+    width: 100%;
+  }
+
+  .similar-box {
+    display: flex;
+    width: calc(calc(100% / 3) - 10px);
+    margin-right: 10px;
+    margin-bottom: 22px;
+    color: var(--color-text);
+}
+
+
+
+  /*=============================================
+=            Section Media content            =
+=============================================*/
+}
+
+/* Mini Tablette */
+/* Mini Tablette */
+
+/* Tablette */
+/* Tablette */
+@media screen and (min-width: 905px) and (max-width: 1080px) {
+  .page-contenair {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .default-search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  
+
+  .default-search .filter-mobile {
+    display: block;
+  }
+
+  .default-search .icon-filter {
+    font-size: 30px;
+    color: var(--grey-secondary);
+  }
+
+  /*=============================================
+=            Section Carousel Events
+============================================*/
+
+  .event-banner {
+    background-position: center center;
+  }
+
+  .carousel-event-card {
+    width: 100%;
+  }
+
+  .carousel-events-cards .swiper-slide {
+    padding: 0 10px;
+  }
+
+  /*=====  End of Carousel Events  ======*/
+
+  /*=============================================
+=            Section Carousel Testimonials
+=============================================*/
+  .carousel-testi-cards {
+    width: 100%;
+  }
+
+  .carousel-testi-cards .swiper-slide {
+    padding: 0 10px;
+  }
+
+  .carousel-testi-card {
+    width: 100%;
+  }
+
+  /*=====  End of Carousel Testimonials  ======*/
+
+  /*=============================================
+=            Section Media content            =
+=============================================*/
+
+  .media-flex {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .media-search {
+    width: 100% !important;
+    display: none;
+    margin-bottom: 30px;
+  }
+
+  .media-search.active {
+    display: block;
+  }
+
+  .similar-box {
+    display: flex;
+    width: calc(calc(100% / 3) - 10px);
+    margin-right: 10px;
+    margin-bottom: 22px;
+    color: var(--color-text);
+}
+
+  /*=============================================
+=            Section Media content            =
+=============================================*/
+}
+/* Tablette */
+/* Tablette */

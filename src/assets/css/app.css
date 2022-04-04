@@ -1,0 +1,877 @@
+/*=============================================
+=            Banner Content            =
+=============================================*/
+
+.banner-slider .swiper-container{
+  overflow:hidden !important;
+}
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  /*👉background: url("../../assets/ressources/img/banner.jpg") no-repeat;👈*/
+  background-position: bottom center;
+  background-size: cover !important;
+  position: relative;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.banner-content {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.banner-content .banner-title {
+  width: 100%;
+}
+
+.banner-content .banner-title h1 {
+  font-size: 70px;
+  font-family: "palatino";
+}
+
+.banner-content .banner-title h1::first-letter{
+  text-transform:capitalize;
+}
+
+.banner-content .banner-title h3 {
+  margin-top: 50px;
+  font-size: 30px;
+  font-family: "Gothic-Regular";
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/*=====  End of Banner Content  ======*/
+
+/*=============================================
+=            Bloc Default            =
+=============================================*/
+
+.bloc-default {
+  width: 100%;
+  position: relative;
+}
+
+.bloc-default-content {
+  width: 100%;
+  position: relative;
+}
+
+.default-title {
+  margin-bottom: 70px;
+}
+
+.default-title h1::first-letter {
+  text-transform: capitalize;
+}
+
+.default-search {
+  width: 40%;
+  margin-bottom: 70px;
+}
+
+.default-search .group-form {
+  position: relative;
+  width: 100%;
+}
+
+.default-search .filter-mobile{
+  display:none;
+}
+
+.default-search input {
+  background: var(--grey);
+  padding: 20px 60px 20px 30px;
+  width: 100%;
+  outline: none;
+  font-family: "Gothic-Medium";
+  font-size: 18px;
+}
+
+.default-search .group-form .icon-search {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: var(--grey-secondary);
+  cursor: pointer;
+}
+
+.bloc-default-flex {
+  width: 100%;
+  display: flex;
+}
+
+.reverse-row {
+  flex-direction: row-reverse;
+}
+
+.default-f-a {
+  width: 359.9px;
+  position: relative;
+}
+
+.d-img {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.d-img .frame {
+  width: 100%;
+  height: 550px;
+  align-items: center;
+  border: 1px solid var(--color-frame);
+  position: absolute;
+  transform: translate(40px, 1px);
+}
+
+.d-img img {
+  display: block;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 490px;
+}
+
+.default-f-b {
+  width: 70%;
+  position: relative;
+  margin-left: 50px;
+}
+
+.d-text {
+  width: 100%;
+  padding: 0 0 0 30px;
+  font-size: 18px;
+  margin-top: -34px;
+}
+
+.default-btn a {
+  display: inline-block;
+  font-size: 18px;
+  font-family: "Gothic-Bold";
+  color: var(--white);
+  background: var(--marron);
+  padding: 12px 18px;
+}
+
+.default-btn-small a {
+  font-size: 16px;
+  font-family: "Gothic-Bold";
+  color: var(--color-text);
+  background: var(--marron);
+  padding: 9px 14px;
+  display: inline-block;
+}
+/*=====  End of Bloc Default  ======*/
+
+/*=============================================
+=            Section carousel-sermons
+=============================================*/
+
+.carousel-sermons {
+  width: 100%;
+  position: relative;
+}
+
+.carousel-sermon {
+  width: 100%;
+  position: relative;
+}
+
+.carousel-title {
+  width: 100%;
+  text-align: center;
+}
+
+.carousel-cards {
+  width: 100%;
+  overflow-x: hidden;
+  padding-bottom: 30px;
+}
+
+.carousel-cards .swiper-container [class*="swiper-button-"] {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0px;
+  border-radius: 50%;
+  box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-cards .swiper-container .swiper-button-prev {
+  left: 0px;
+}
+
+.carousel-cards .swiper-container .swiper-button-next {
+  left: 100% !important;
+}
+
+.carousel-flex {
+  position: relative;
+  display: inline-flex;
+  transform: translateX(0px);
+}
+
+.carousel-card {
+  display: block;
+  width: 290px !important;
+  position: relative;
+  margin-right: 20px;
+  box-shadow: 0px 4px 21px rgba(0, 0, 0, 0.11);
+}
+
+.carousel-image {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-image img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.712);
+}
+
+.carousel-image .carousel-btn {
+  position: absolute;
+  z-index: 20;
+}
+
+.carousel-image .carousel-btn .icon-play-1 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #1e33d579;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0px;
+  font-size: 30px;
+  color: var(--white);
+}
+
+.carousel-body {
+  background: var(--white);
+  width: 100%;
+  padding: 15px;
+}
+
+.carousel-body h3 {
+  margin-bottom: 20px;
+}
+
+.carousel-body .small-text span {
+  display: block;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.small-text .date {
+  color: var(--marron);
+}
+
+.small-text .publish {
+  color: var(--grey-secondary);
+  font-family: "Gothic-Medium";
+}
+/*=====  End of carousel-sermons  ======*/
+
+/*=============================================
+=            Section Carousel Events
+=============================================*/
+
+.carousel-events {
+  width: 100%;
+  position: relative;
+}
+
+.carousel-event {
+  width: 100%;
+  background: var(--grey);
+}
+
+.event-banner {
+  width: 100%;
+  height: 350px;
+  background: url("../../assets/ressources/img/hero_2.jpg");
+  background-size: cover;
+  background-position: bottom -328px center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: var(--white);
+}
+
+.event-banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.493);
+}
+
+.event-banner h1 {
+  position: relative;
+  z-index: 10;
+}
+
+.carousel-events-cards {
+  width: 100%;
+  margin-top: -80px;
+  padding-bottom: 30px;
+  overflow-x: hidden;
+}
+
+.carousel-events-flex {
+  display: inline-flex;
+}
+
+.carousel-event-card {
+  width: 550px;
+  display: flex;
+  margin-right: 30px;
+}
+
+.carousel-event-card .event-image {
+  width: 45%;
+  align-self: flex-end;
+  position: relative;
+  z-index: -10;
+  overflow: hidden;
+}
+
+.carousel-event-card .event-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.carousel-event-card .event-image img {
+  display: block;
+  width: 100%;
+  height: 400px;
+  z-index: -2;
+  transition: transform 0.5s ease 0s;
+}
+
+.carousel-event-card:hover .event-image img {
+  transform: scale(1.08);
+}
+
+.event-section {
+  width: 55%;
+  height: 430px;
+  padding: 13px 20px 20px;
+  position: relative;
+  background: var(--white);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.11);
+}
+
+.event-section .event-date {
+  width: 220px;
+  padding: 10px 10px 10px 40px;
+  background: var(--marron);
+  color: var(--white);
+  position: absolute;
+  top: 35px;
+  left: -20px;
+  display: block;
+}
+
+.event-section .event-date::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 17px;
+  left: 8px;
+  bottom: -20px;
+  width: 40px;
+  height: 40px;
+  background: #1e33d556;
+  transform: rotate(-227deg);
+  z-index: -10;
+}
+
+.event-text {
+  margin-top: 80px;
+}
+
+.event-section .event-title {
+  margin-top: 10px;
+}
+
+.event-section .event-title h3 {
+  display: block;
+  width: 200px;
+  word-wrap: break-word;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.event-section .event-title p {
+  font-size: 15px;
+  color: var(--grey-secondary);
+}
+
+.event-section .event-title p abbr {
+  color: var(--marron);
+}
+
+.event-section .event-content {
+  width: 100%;
+  height: 130px;
+  margin-bottom: 10px;
+  color: var(--grey-secondary);
+  overflow: hidden;
+}
+
+.event-section .default-btn {
+  margin-top: 10px;
+}
+
+.carousel-event-btn {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0 30px;
+}
+
+.carousel-event-btn .event-btns {
+  display: flex;
+}
+
+.event-btns [class*="swiper-button-"] {
+  cursor: pointer;
+  margin-right: 40px;
+}
+
+.event-btns [class*="swiper-button-"] svg {
+  width: 50px;
+  height: 50px;
+}
+
+.event-btns .swiper-button-next {
+  margin: 0px;
+}
+
+/*=====  End of Section Carousel Events  ======*/
+
+/*=============================================
+=            Section Carousel Testimonials
+=============================================*/
+.carousel-testimonials {
+  width: 100%;
+  position: relative;
+}
+
+.carousel-testimonial {
+  width: 100%;
+}
+
+.carousel-testi-cards {
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.carousel-testi-flex {
+  display: inline-flex;
+}
+
+.carousel-testi-card {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.carousel-testi-card:not(:last-child) {
+  margin-right: 20px;
+}
+
+.carousel-testi-card .testi-image {
+  width: 100%;
+}
+
+.carousel-testi-card .testi-image img {
+  width: 100%;
+  height: 233px;
+  object-fit: cover;
+}
+
+.carousel-testi-card .testi-body {
+  width: calc(calc(100% - 50px));
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: var(--white);
+  margin-top: -70px;
+}
+
+.carousel-testi-card .testi-body p {
+  margin-bottom: 5px;
+}
+
+.carousel-testi-card .testi-body .quote {
+  margin-bottom: 10px;
+}
+
+.carousel-testi-card .testi-body a {
+  display: inline-block;
+  color: var(--marron);
+  margin-bottom: 10px;
+  position: relative;
+  font-family: "Gothic-Medium";
+}
+
+.carousel-testi-card .testi-body a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background: var(--marron);
+}
+
+.carousel-testi-card .testi-body h5 {
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.carousel-testi-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0 0px;
+}
+
+.carousel-testi-btn [class*="swiper-button-"] {
+  margin-right: 40px;
+  cursor: pointer;
+}
+
+.carousel-testi-btn .swiper-button-next {
+  margin: 0;
+}
+
+.carousel-testi-btn [class*="swiper-button-"] svg {
+  width: 30px;
+  height: 30px;
+}
+
+.testi-btns {
+  display: flex;
+}
+/*=====  End of Carousel Testimonials  ======*/
+
+/*=============================================
+=            Section Media content            =
+=============================================*/
+
+.media-flex {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.media-search {
+  width: 30%;
+  background: var(--grey);
+  padding: 30px;
+  align-self: flex-start;
+}
+
+.media-search .speak-title {
+  margin-bottom: 20px;
+}
+
+.media-search .group-form {
+  position: relative;
+}
+
+.media-search input,
+.media-search select {
+  width: 100%;
+  background: var(--white);
+  padding: 15px 30px 15px 20px;
+  outline: none;
+  font-family: "Gothic-Medium";
+}
+
+.media-search .icon-search {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+.media-search .searching-saves {
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.media-search .search-only {
+  padding: 12px;
+  background: var(--white);
+  color: var(--color-text);
+  margin-right: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-family: "Gothic-Medium";
+}
+
+.media-box {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*👉.media-box .media-card{
+  width:calc(calc(100% / 3) - 20px) !important;
+  margin-right:0px;
+  margin-left:20px;
+  margin-bottom:30px;
+}👈*/
+
+.media-bottom {
+  margin-top: 20px;
+}
+
+.media-image {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom:40px;
+}
+
+.media-image .m-img {
+  width: 860px;
+  height: 540px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.404);
+}
+
+.media-image .m-img img {
+  max-width: 100%;
+  min-width: 100%;
+  max-height: 100%;
+  min-height: 100%;
+}
+
+.media-publish {
+  width: 860px;
+  align-self:flex-start;
+  margin-top: 30px;
+  margin-right:auto;
+  margin-left:auto;
+}
+
+.media-publish span {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.media-text {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/**
+ *
+ * Simular-single
+ *
+ */
+
+.single-similar {
+  width: 100%;
+  margin-top: 80px;
+}
+
+.single-similar .single-title {
+  margin-bottom: 40px;
+}
+
+.similar-flex {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.similar-box {
+  display: flex;
+  width: calc(calc(100% / 4) - 10px);
+  margin-right: 10px;
+  margin-bottom: 22px;
+  color: var(--color-text);
+}
+
+.similar-box .similar-image {
+  width: 200px;
+  height: 90px;
+  margin-right: 10px;
+  overflow: hidden;
+}
+
+.similar-box .similar-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.4s ease 0s;
+}
+
+.similar-box:hover img {
+  transform: scale(1.1);
+}
+
+.similar-body h3 {
+  font-family: "Gothic-Medium";
+  margin-bottom: 10px;
+}
+
+.similar-body {
+  width: 80%;
+  align-self: flex-start;
+}
+
+/*=====  End of Section Media content  ======*/
+
+/*=============================================
+=            Properties for All            =
+=============================================*/
+
+.swiper-container {
+  width: 100% !important;
+  overflow: visible !important;
+}
+
+svg {
+  width: 24px;
+  height: 24px;
+}
+
+.page-contenair {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+@media screen and (min-width:1599px) and (max-width:1600px){
+  .page-contenair {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+.pt-pb {
+  margin: 60px 0;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.mg-right {
+  margin-left: 0px;
+  margin-right: 50px;
+}
+
+.mt-80 {
+  margin-top: 80px;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.pd-right {
+  padding-left: 0px;
+  padding-right: 30px;
+}
+
+.ps-x {
+  transform: translate(-40px, 1px) !important;
+}
+
+/*=====  End of Properties for All ======*/
+
+/*=============================================
+=            Section comment block            =
+=============================================*/
+.mgs-err {
+  font-size: 13px;
+  color: #dc3545;
+}
+
+.error {
+  background: #dc35462d;
+  border-color: #dc3545 !important;
+}
+
+/*=====  End of Section comment block  ======*/

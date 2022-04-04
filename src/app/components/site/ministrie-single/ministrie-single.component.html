@@ -1,0 +1,59 @@
+<app-nav></app-nav>
+<app-social></app-social>
+
+<!-- Banner content -->
+<!-- Banner content -->
+
+<div class="banner" style="background:url(../../../../assets/ressources/img/7.jpg);">
+    <div class="banner-content">
+        <div class="banner-title">
+            <h1>community ministry</h1>
+            <h3>Impact the world with gospel of the kingdom. </h3>
+        </div>
+    </div>
+</div>
+
+<!-- Banner content -->
+<!-- Banner content -->
+
+<div class="bloc-default">
+    <div class="bloc-default-content page-contenair pt-pb">
+        <div class="default-title center">
+            <h1>{{ministry.libelle}}</h1>
+        </div>
+        <div class="media-image">
+            <div class="m-img">
+                <img src="{{imageUrl}}/ministries/{{ministry.image}}" alt="">
+            </div>
+
+            <div class="media-publish">
+                <span class="publish"> Leader name :  <strong>{{ministry.leader_name}}</strong></span>
+            </div>
+        </div>
+
+        <div class="media-text">
+            <p>{{ministry.full_desc}}</p>
+        </div>
+
+        <div class="single-similar">
+            <div class="single-title">
+                <h2>More ministries</h2>
+            </div>
+
+            <div class="similar-flex">
+                <a href="/site/ministry/{{other.id}}" class="similar-box" *ngFor="let other of others">
+                    <div class="similar-image">
+                        <img src="{{imageUrl}}/ministries/{{other.image}}" alt="">
+                    </div>
+
+                    <div class="similar-body">
+                        <h3>{{other.libelle}}</h3>
+                        <p>{{other.very_small_desc}}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

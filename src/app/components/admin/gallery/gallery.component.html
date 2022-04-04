@@ -1,0 +1,146 @@
+<div class="body-dashboard">
+    <div class="wrapper-dash">
+        <app-side-nav [addActive]="addActive"></app-side-nav>
+        <div class="wrapper-nav-resp">
+            <div class="nav-resp">
+                <div class="nav-resp-left">
+                    <div class="nav-resp-logo">
+                        <img src="../../../assets/ressources/logo/72x72.png" alt="">
+                    </div>
+
+                    <div class="nav-resp-profil">
+                        <div class="nav-profil-circle">
+                            <img src="../../../assets/ressources/icons/male_user.svg" alt="">
+                        </div>
+                        <div class="dot-line"></div>
+                    </div>
+                </div>
+
+                <div class="nav-resp-toggle" (click)="toggle()">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+        <!-- Dash Modal -->
+        <!-- Dash Modal -->
+        <div class="dash-modal" (click)="closeModal()" [class.active]="AppearModal">
+            <div class="dash-modal-wrapper" (click)="stopPropagation($event)">
+                <div class="dsh-m-head flex space-between align-items">
+                    <h2>Add pictures</h2>
+
+                    <div class="cancel" (click)="closeModal()">
+                        <i class='bx bx-x'></i>
+                    </div>
+                </div>
+
+                <div class="dsh-m-form">
+                    <form action="" method="post">
+                        <div class="group-form">
+                            <label for="">Add pictures</label>
+                            <label class="file-box">
+                                <input type="file" multiple (change)="onSelectedFile($event)" hidden>
+                                <div class="file-icon">
+                                    <i class='bx bx-image-add'></i>
+                                </div>
+                            </label>
+                            <div class="file-preview">
+                                <div class="fl-pr-img" *ngFor="let url of urls">
+                                    <img src="{{url}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-btn">
+                            <button class="btn bg-success" (click)="sauvegarder()" [disabled]="isAdding">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Dash Modal -->
+        <!-- Dash Modal -->
+
+        <div class="dash">
+            <div class="dash-title padding-10">
+                <h1>Manage gallery images</h1>
+            </div>
+
+            <div class="dash-photo">
+                <!-- <div class="filter padding-10">
+                    <div class="filter-head">
+                        <h2>Filter</h2>
+                        <div class="fl-icon" (click)="Filter()">
+                            <i class='bx bx-filter-alt'></i>
+                        </div>
+                    </div>
+
+                    <div class="filter-inputs">
+                        <form action="" method="post" class="form-filter">
+                            <div class="form-filter-content">
+                                <div class="group-form">
+                                    <label for="date">date</label>
+                                    <div class="input-flex">
+                                        <div>
+                                            <span class="label">Au</span>
+                                            <input type="date" name="" id="" class="input-control">
+                                        </div>
+                                        <div>
+                                            <span class="label">Du</span>
+                                            <input type="date" name="" id="" class="input-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="group-form">
+                                    <label for="titre">title</label>
+                                    <input type="text" name="" id="" placeholder="Search by title"
+                                        class="input-control">
+                                </div>
+
+                                <div class="group-form">
+                                    <label for="titre">description</label>
+                                    <input type="text" name="" id="" placeholder="Search by description"
+                                        class="input-control">
+                                </div>
+                            </div>
+
+                            <div class="form-filter-btn">
+                                <button>Filter</button>
+                            </div>
+                        </form>
+                    </div>
+                </div> -->
+
+                <div class="dash-title-search padding-10">
+                  
+                    <button class="btn-add" (click)="showModal()">Add pictures <i
+                            class='bx bx-plus-circle'></i></button>
+                </div>
+
+                <div class="dsh-photo-content">
+                   
+                   
+                    <div class="dsh-photo-box" *ngFor="let image of images">
+                        <div class="dsh-box-two">
+                            <div class="dsh-photo-img">
+                                <img src="{{imageUrl}}/galerie/{{image.chemin}}" alt="">
+                            </div>
+
+                            <div class="dsh-photo-actions">
+                                <div class="danger action" id="" (click)="delete(image.id)">
+                                    <i class='bx bx-trash'></i>
+                                </div>
+                                <div class="blue A action" (click)="editer(image.id)">
+                                    <i class='bx bx-edit'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form [formGroup]="brandForm">
+                    <input type="text" formControlName="id" hidden>
+                    <input type="file" name="file" (change)="loadImage($event)" id="file" hidden>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

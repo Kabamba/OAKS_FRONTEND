@@ -1,0 +1,78 @@
+<app-nav></app-nav>
+<app-social></app-social>
+
+<!-- Banner content -->
+<!-- Banner content -->
+
+<div class="banner" style="background:url(../../../../assets/ressources/img/oaks-18.jpg);">
+    <div class="banner-content">
+        <div class="banner-title">
+            <h1>Our gallery</h1>
+            <h3>Impact the world with gospel of the kingdom. </h3>
+        </div>
+    </div>
+</div>
+
+<!-- Banner content -->
+<!-- Banner content -->
+
+<!-- Gallery -->
+<!-- Gallery -->
+<div class="gallery">
+    <!-- Modal gallery -->
+    <!-- Modal gallery -->
+
+    <div class="gallery-modal" [class.active]="slide" *ngIf="slide">
+        <div class="gallery-modal-cancel">
+            <span class="icon-cancel" (click)="closeSlide($event)"></span>
+        </div>
+        <div class="gallery-modal-wrapper">
+            <div class="gallery-modal-card">
+                <swiper [config]="config">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <img src="{{imageUrl}}/galerie/{{current}}" alt="image" class="imageFirst">
+                        </div>
+
+                        <div class="swiper-slide" *ngFor="let image of images">
+                            <img src="{{imageUrl}}/galerie/{{image.chemin}}" alt="image" class="imageFirst">
+                        </div>
+                    </div>
+                </swiper>
+
+                <div class="gallery-modal-btn">
+                    <div class="swiper-button-prev">
+                        <span class="icon-left-open-2"></span>
+                    </div>
+                    <div class="swiper-button-next">
+                        <span class="icon-right-open-2"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal gallery -->
+    <!-- Modal gallery -->
+    <div class="gallery-content page-contenair pt-pb">
+        <div class="default-title center">
+            <h1>Gallery Oaks of Righteousness</h1>
+        </div>
+
+        <div class="gallery-flex">
+            <div class="gallery-card" *ngFor="let image of images">
+                <img src="{{imageUrl}}/galerie/{{image.chemin}}" alt="{{image.chemin}}">
+                <div class="see" (click)="showSlide(image.chemin)">
+                    <div class="see-circle">
+                        <span class="icon-zoom-in-1"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
+<!-- Gallery -->
+<!-- Gallery -->
